@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import "./VolunteerList.scss"
 
 const VolunteerList = () => {
   return (

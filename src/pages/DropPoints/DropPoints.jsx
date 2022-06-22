@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import "./DropPoints.scss"
 
 const DropPoints = () => {
   return (
