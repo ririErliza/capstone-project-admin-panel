@@ -8,24 +8,21 @@ import Logout from './pages/Logout/Logout';
 import Register from './pages/Register/Register';
 import NotFound from './pages/NotFound/NotFound';
 import VolunteerList from './pages/VolunteerList/VolunteerList';
-import Sidebar from './components/Sidebar/Sidebar';
-import Navbar from './components/Navbar/Navbar';
+//import Sidebar from './components/Sidebar/Sidebar';
+//import Navbar from './components/Navbar/Navbar';
 
 
 function App() {
   return (
-    <div className='App'>
+
       <Router>
 
-      <Sidebar />
-      
+    
   
-  
-      <div className="AppContainer">
-      <Navbar/>
+
         <Routes>
-          <Route path="/" element={<Home/>} />
-          <Route path="/login" element={<Login />}  />
+          <Route path="/home" element={<Home/>} />
+          <Route path="/" element={<Login />}  />
           <Route path="/logout" element={<Logout />}  />
           <Route path="/register" element={<Register />}  />
           <Route path="/donors" element={<DonorList />}/>
@@ -33,10 +30,10 @@ function App() {
           <Route path="/dropPoints" element={<DropPoints />}   />
           <Route path="*" element={<NotFound />}  />
         </Routes>
-        </div>
+        
       </Router>
      
-      </div>
+      
   );
 }
 
