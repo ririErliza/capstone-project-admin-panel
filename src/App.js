@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import DonorList from './pages/DonorList/DonorList';
 import DropPoints from './pages/DropPoints/DropPoints';
@@ -13,26 +13,21 @@ import VolunteerList from './pages/VolunteerList/VolunteerList';
 
 
 function App() {
+  //const user = localStorage.getItem("token");
   return (
 
-      <Router>
-
-    
-  
-
         <Routes>
-          <Route path="/home" element={<Home/>} />
-          <Route path="/" element={<Login />}  />
+          <Route path="/" element={<Home/>} />
+          <Route path="/login" exact element={<Login />}  />
+          {/* <Route path="/" element={<Navigate replace to="/login" />} /> */}
           <Route path="/logout" element={<Logout />}  />
-          <Route path="/register" element={<Register />}  />
+          <Route path="/register" exact element={<Register />}  />
           <Route path="/donors" element={<DonorList />}/>
           <Route path="/volunteers" element={<VolunteerList />}  />
           <Route path="/dropPoints" element={<DropPoints />}   />
           <Route path="*" element={<NotFound />}  />
         </Routes>
-        
-      </Router>
-     
+
       
   );
 }
