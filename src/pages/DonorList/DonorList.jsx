@@ -11,10 +11,9 @@ const DonorList = () => {
     
     <div className='listContainer'>
       <Navbar/>
-      <div className="listTitle">Donor List</div>
-      <div className='listTable'>
+     
       <TableList/>
-      </div>
+      
     </div>
     </div>
   )
