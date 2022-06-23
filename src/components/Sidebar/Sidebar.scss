@@ -32,10 +32,13 @@
                 align-items: center;
                 padding: 5px;
                 cursor:pointer;
+                margin-top: 10px;
 
                 &:hover{
                     background-color: #157977;
+                    border-radius: 20px;
                     width: 150px;
+        
                 }
 
                 .icon{
@@ -45,11 +48,13 @@
                 }
 
                 span{
+        
                     font-size: 17px;
                     font-weight: 500;
                     color: #f6fafa;
                     margin-left: 10px;
-                    margin-top: 19px;
+                    padding-top: 10px;
+                    
                 }
             }
         }
@@ -72,6 +77,7 @@
 
                 &:hover{
                     background-color: #157977;
+                    border-radius: 20px;
                     width: 150px;
                 
                 }

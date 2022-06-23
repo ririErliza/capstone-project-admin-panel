@@ -1,22 +1,19 @@
 import React from 'react';
 import "./Home.scss"
-import Dashboard from '../Dashboard/Dashboard';
-
-
+import Sidebar from '../../components/Sidebar/Sidebar';
+import Navbar from '../../components/Navbar/Navbar';
 
 
 
 
 const Home = () => {
   return (
+    <div className="home">
+      <Sidebar />
+      <div className="homeContainer">
         <Navbar />
       </div>
-
-      < >
-    
-        <Dashboard />
-      </>
-  
+    </div>
   )
 }
 

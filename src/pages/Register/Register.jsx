@@ -27,72 +27,72 @@ const Register = () => {
   };
   return (
     <div>
-<Container maxWidth="sm">
-<Grid
-	container
-	spacing={2}
-	direction="column"
-	justifyContent="center"
-	style={{ minHeight: "100vh" }}
->
-<Paper elelvation={2} sx={{ padding: 5 }}>
-<form>
-<Grid container direction="column" spacing={2}>
-<Grid item>
-		<TextField
-			type="string"
-			fullWidth
-			label="Enter your name"
-			placeholder="Your Name"
-			variant="outlined"
-			required
-		/>
-	</Grid>
-	<Grid item>
-		<TextField
-			type="email"
-			fullWidth
-			label="Enter your email"
-			placeholder="Email Address"
-			variant="outlined"
-			required
-		/>
-	</Grid>
+			<Container maxWidth="sm">
+				<Grid
+					container
+					spacing={2}
+					direction="column"
+					justifyContent="center"
+					style={{ minHeight: "100vh" }}
+				>
+				<Paper elelvation={2} sx={{ padding: 5 }}>
+				<form>
+				<Grid container direction="column" spacing={2}>
+				<Grid item>
+						<TextField
+							type="string"
+							fullWidth
+							label="Enter your name"
+							placeholder="Your Name"
+							variant="outlined"
+							required
+						/>
+					</Grid>
+					<Grid item>
+						<TextField
+							type="email"
+							fullWidth
+							label="Enter your email"
+							placeholder="Email Address"
+							variant="outlined"
+							required
+						/>
+					</Grid>
 
-	<Grid item>
-	<TextField
-		type={values.showPass ? "text" : "password"}
-		fullWidth
-		label="Password"
-		placeholder="Password"
-		variant="outlined"
-		required
-		InputProps={{
-			endAdornment: (
-				<InputAdornment position="end">
-					<IconButton
-						onClick={handlePassVisibilty}
-						aria-label="toggle password"
-						edge="end"
-					>
-						{values.showPass ? <VisibilityOffIcon /> : <VisibilityIcon />}
-					</IconButton>
-				</InputAdornment>
-			),
-		}}
-	/>
-	</Grid>
+					<Grid item>
+					<TextField
+						type={values.showPass ? "text" : "password"}
+						fullWidth
+						label="Password"
+						placeholder="Password"
+						variant="outlined"
+						required
+						InputProps={{
+							endAdornment: (
+								<InputAdornment position="end">
+									<IconButton
+										onClick={handlePassVisibilty}
+										aria-label="toggle password"
+										edge="end"
+									>
+										{values.showPass ? <VisibilityOffIcon /> : <VisibilityIcon />}
+									</IconButton>
+								</InputAdornment>
+							),
+						}}
+					/>
+					</Grid>
 
-	<Grid item>
-	<Button type="submit" fullWidth variant="contained">
-		REGISTER
-	</Button>
-	</Grid>
-</Grid>
-</form>
-</Paper>
-</Grid>
-</Container>
+					<Grid item>
+					<Button type="submit" fullWidth variant="contained">
+						REGISTER
+					</Button>
+					</Grid>
+				</Grid>
+				</form>
+				</Paper>
+				</Grid>
+			</Container>
 		</div>
   )
 }
