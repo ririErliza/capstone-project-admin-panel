@@ -51,7 +51,7 @@ const Register = () => {
     });
   };
   return (
-    <div>
+    <div id="background">
 			<Container maxWidth="sm">
 				<Grid
 					container
@@ -127,7 +127,7 @@ const Register = () => {
 					</Grid>
 
 					<Grid item>
-					<Button type="submit" fullWidth variant="contained">
+					<Button id="button-green" type="submit" fullWidth variant="contained">
 						SIGNUP
 					</Button>
 					</Grid>
