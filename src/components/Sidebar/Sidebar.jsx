@@ -7,9 +7,14 @@ import PersonIcon from '@mui/icons-material/Person';
 import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
 import PushPinIcon from '@mui/icons-material/PushPin';
 import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
+import { Button } from '@mui/material';
 
 
 const Sidebar = () => {
+  const handleLogout =()=>{
+    localStorage.removeItem("token");
+    window.location.reload();
+  }
   return (
 
     <div className='sidebar'>
@@ -41,7 +46,7 @@ const Sidebar = () => {
       </div>
       <div className="bottom">
         <ul>
-        <li><PowerSettingsNewIcon className='icon'/> <span>Logout</span> </li>
+        <li><PowerSettingsNewIcon className='icon'/> <Button onClick={handleLogout}>Logout</Button> </li>
         </ul>
       </div>
            
