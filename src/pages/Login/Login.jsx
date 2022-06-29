@@ -8,10 +8,12 @@ import {
 	TextField,
 	IconButton,
 	InputAdornment,
+	Typography,
 } from "@mui/material";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
-import axios from 'axios'
+import axios from 'axios';
+import { Link } from "react-router-dom";
 
 
 const Login = () => {
@@ -53,9 +55,15 @@ const Login = () => {
 	justifyContent="center"
 	style={{ minHeight: "100vh" }}
 >
-<Paper elelvation={2} sx={{ padding: 5 }}>
+
+<Paper elevation={2} sx={{ padding: 3 }}>
+<Typography>
+	<h2>Login to Your Account</h2>
+
+</Typography>
 <form onSubmit={handleSubmit}>
 <Grid container direction="column" spacing={2}>
+
 	<Grid item>
 		<TextField
 			type="email"
@@ -95,12 +103,23 @@ const Login = () => {
 
 	<Grid item>
 	<Button type="submit" fullWidth variant="contained">
-		Sign In
+		Login
 	</Button>
+	</Grid>
+
+	<Grid item>
+	<h4>New Here ?</h4>
+					<Link to="/register">
+						<Button>
+							Sign Up
+						</Button>
+					</Link>
 	</Grid>
 </Grid>
 </form>
+
 </Paper>
+
 </Grid>
 </Container>
 		</div>

@@ -8,10 +8,12 @@ import {
 	TextField,
 	IconButton,
 	InputAdornment,
+	Typography,
 } from "@mui/material";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import axios from 'axios';
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [values, setValues] = useState({
@@ -23,6 +25,7 @@ const Register = () => {
   });
 
   console.log(values)
+  const navigate = useNavigate();
 
   const handleSubmit = (e) =>{
 	e.preventDefault();
@@ -33,7 +36,11 @@ const Register = () => {
 		email:values.email,
 		password:values.password,
 	})
-	.then(res=>console.log(res))
+	.then((res)=>{
+		console.log(res.message);
+		navigate("/login")
+
+	})
 	.catch(err=>console.error(err))
   }
   
@@ -53,7 +60,11 @@ const Register = () => {
 					justifyContent="center"
 					style={{ minHeight: "100vh" }}
 				>
-				<Paper elelvation={2} sx={{ padding: 5 }}>
+				<Paper elevation={2} sx={{ padding: 3 }}>
+					<Typography>
+					<h2>Create New Account</h2>
+
+					</Typography>
 				<form onSubmit={handleSubmit}>
 				<Grid container direction="column" spacing={2}>
 				<Grid item>
@@ -117,8 +128,16 @@ const Register = () => {
 
 					<Grid item>
 					<Button type="submit" fullWidth variant="contained">
-						REGISTER
+						SIGNUP
 					</Button>
+					</Grid>
+					<Grid item>
+						<h4>Already have an account ?</h4>
+							<Link to="/login">
+								<Button>
+									Login
+								</Button>
+							</Link>
 					</Grid>
 				</Grid>
 				</form>
