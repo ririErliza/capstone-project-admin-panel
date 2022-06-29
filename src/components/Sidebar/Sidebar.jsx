@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import "./Sidebar.scss";
-import Logo from './logo.png'
+import Logo from '../../images/logo.png'
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import PersonIcon from '@mui/icons-material/Person';
 import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
