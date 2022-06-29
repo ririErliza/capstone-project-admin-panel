@@ -30,8 +30,10 @@ const Login = () => {
 		email:values.email,
 		password:values.password,
 	})
-	.then((res)=>
-		localStorage.setItem("token", res.data.accessToken))
+	.then((res)=>{
+		localStorage.setItem("token", res.data.accessToken);
+		window.location="/";
+	})
 	.catch(err=>console.error(err))
   }
   
