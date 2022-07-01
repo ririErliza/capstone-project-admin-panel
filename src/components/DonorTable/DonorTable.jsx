@@ -5,13 +5,13 @@ import Box from '@mui/material/Box';
 import { DataGrid} from '@mui/x-data-grid';
 
 const columns = [
-  { field: '_id', headerName: 'ID', width: 90 },
-  {field: 'name',headerName: 'Name',width: 150,editable: true,},
-  {field: 'surname',headerName: 'Surname', width: 150, editable: true,},
-  {field: 'email',headerName: 'Email',type: 'number',width: 110,editable: true,},
-  {field: 'phone',headerName: 'Phone',type: 'number',width: 110,editable: true,},
-  {field: 'numberOfShoes',headerName: 'Amount (shoes)',width: 150,editable: true,},
-  {field: 'dropPoints',headerName: 'Droppoint',width: 150,editable: true,},
+  {field: '_id', headerName: 'ID', width: 90 },
+  {field: 'name', headerName: 'Name',width: 150,editable: true,},
+  {field: 'surname', headerName: 'Surname', width: 150, editable: true,},
+  {field: 'email', headerName: 'Email',type: 'number',width: 110,editable: true,},
+  {field: 'phone', headerName: 'Phone',type: 'number',width: 110,editable: true,},
+  {field: 'numberOfShoes', headerName: 'Amount (shoes)',width: 150,editable: true,},
+  {field: 'dropPoints', headerName: 'Droppoint',width: 150,editable: true,},
 ];
 
 const DonorTable = () => {
