@@ -47,7 +47,7 @@ const columns = [
   {
     field: 'duration',
     headerName: 'Duration',
-    width: 150,
+    width: 125,
     editable: true,
   },
 
@@ -88,6 +88,7 @@ const VolunteerTable = () => {
       rowsPerPageOptions={[5]}
       checkboxSelection
       disableSelectionOnClick
+      loading={!data.length}
     />
   </Box>
   )

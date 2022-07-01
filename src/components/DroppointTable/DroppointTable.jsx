@@ -69,6 +69,7 @@ const DroppointTable = () => {
       rowsPerPageOptions={[5]}
       checkboxSelection
       disableSelectionOnClick
+      loading={!data.length}
     />
   </Box>
   )

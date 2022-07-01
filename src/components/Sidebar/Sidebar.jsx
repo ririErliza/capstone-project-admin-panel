@@ -48,7 +48,7 @@ const Sidebar = () => {
       </div>
       <div className="bottom">
         <ul>
-        <li><PowerSettingsNewIcon className='icon'/> <Button onClick={handleLogout}>Logout</Button> </li>
+        <li><PowerSettingsNewIcon className='icon'/> <Button onClick={handleLogout} id="logoutButton">Logout</Button> </li>
         </ul>
       </div>
            
