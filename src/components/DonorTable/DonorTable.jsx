@@ -51,26 +51,27 @@ const DonorTable = () => {
 
 
   const [data, setData]=useState([])
+  const apiUrl = 'https://reviver-backend.herokuapp.com'
   const token = localStorage.getItem('token')
 
-  axios.interceptors.request.use(
-    config=>{
-      config.headers.authorization =`Bearer ${token}`;
-      return config
-    },
-    error =>{
-      return Promise.reject(error)
-    }
-  )
+  const authAxios = axios.create({
+    baseURL:apiUrl,
+    headers: {Authorization :`Bearer ${token}`}
+  })
+      
 
   useEffect(()=> {
-    axios.get('https://reviver-backend.herokuapp.com/donors')
+    authAxios.get(`${apiUrl}/donors`)
     .then(res=> {
       console.log("Data is", res.data)
       setData(res.data)
     })
     .catch(err=>console.log(err))
-  }, [])
+  }, 
+ // eslint-disable-next-line
+  [])
+
+  
   return (
     <Box sx={{ height: 400, width: '100%' }}>
     <DataGrid
