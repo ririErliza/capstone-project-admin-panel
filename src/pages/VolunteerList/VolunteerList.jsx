@@ -1,9 +1,21 @@
 import React from 'react';
+import Navbar from '../../components/Navbar/Navbar';
+import Sidebar from '../../components/Sidebar/Sidebar';
+import VolunteerTable from '../../components/VolunteerTable/VolunteerTable';
 import "./VolunteerList.scss"
 
 const VolunteerList = () => {
   return (
-    <div>VolunteerList</div>
+    <div className="list">
+    <Sidebar/>
+  
+  <div className='listContainer'>
+    <Navbar/>
+   
+    <VolunteerTable/>
+    
+  </div>
+  </div>
   )
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import "./Sidebar.scss";
 import Logo from '../../images/logo.png'
 import DashboardIcon from '@mui/icons-material/Dashboard';
@@ -11,9 +11,11 @@ import { Button } from '@mui/material';
 
 
 const Sidebar = () => {
+
+  const Navigate = useNavigate()
   const handleLogout =()=>{
     localStorage.removeItem("token");
-    window.location.reload();
+    Navigate("/login")
   }
   return (
 

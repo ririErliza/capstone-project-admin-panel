@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import Sidebar from '../../components/Sidebar/Sidebar';
-import TableList from '../../components/TableList/TableList';
+import DonorTable from '../../components/DonorTable/DonorTable';
 import "./DonorList.scss"
 
 const DonorList = () => {
@@ -12,7 +12,7 @@ const DonorList = () => {
     <div className='listContainer'>
       <Navbar/>
      
-      <TableList/>
+      <DonorTable/>
       
     </div>
     </div>
