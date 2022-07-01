@@ -6,45 +6,12 @@ import { DataGrid} from '@mui/x-data-grid';
 
 const columns = [
   { field: '_id', headerName: 'ID', width: 90 },
-  {
-    field: 'name',
-    headerName: 'Name',
-    width: 150,
-    editable: true,
-  },
-  {
-    field: 'surname',
-    headerName: 'Surname',
-    width: 150,
-    editable: true,
-  },
-  {
-    field: 'email',
-    headerName: 'Email',
-    type: 'number',
-    width: 110,
-    editable: true,
-  },
-  {
-    field: 'phone',
-    headerName: 'Phone',
-    type: 'number',
-    width: 110,
-    editable: true,
-  },
-  {
-    field: 'numberOfShoes',
-    headerName: 'Amount (shoes)',
-    width: 150,
-    editable: true,
-  },
-  {
-    field: 'dropPoints',
-    headerName: 'Droppoint',
-    width: 150,
-    editable: true,
-  },
-
+  {field: 'name',headerName: 'Name',width: 150,editable: true,},
+  {field: 'surname',headerName: 'Surname', width: 150, editable: true,},
+  {field: 'email',headerName: 'Email',type: 'number',width: 110,editable: true,},
+  {field: 'phone',headerName: 'Phone',type: 'number',width: 110,editable: true,},
+  {field: 'numberOfShoes',headerName: 'Amount (shoes)',width: 150,editable: true,},
+  {field: 'dropPoints',headerName: 'Droppoint',width: 150,editable: true,},
 ];
 
 const DonorTable = () => {
@@ -73,7 +40,7 @@ const DonorTable = () => {
 
   
   return (
-    <Box sx={{ height: 400, width: '100%' }}>
+    <Box sx={{ height: 500, width: '90%' }} className="Box-Table">
     <DataGrid
       getRowId={(row) => row._id}
       rows={data}

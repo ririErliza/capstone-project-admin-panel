@@ -11,7 +11,10 @@ const DropPoints = () => {
   
   <div className='listContainer'>
     <Navbar/>
-   
+    <div className='title'>
+  <h2>Drop Points</h2>
+</div>
+
     <DroppointTable/>
     
   </div>

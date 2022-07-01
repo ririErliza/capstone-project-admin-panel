@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import Sidebar from '../../components/Sidebar/Sidebar';
@@ -11,8 +12,17 @@ const VolunteerList = () => {
   
   <div className='listContainer'>
     <Navbar/>
-   
+
+<div className='title'>
+  <h2>Volunteer List</h2>
+</div>
+
     <VolunteerTable/>
+ 
+
+
+   
+    
     
   </div>
   </div>

@@ -1,65 +1,76 @@
 import {useEffect, useState} from 'react';
 import "./DroppointTable.scss";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
 import axios from 'axios';
+import Box from '@mui/material/Box';
+import { DataGrid} from '@mui/x-data-grid';
+
+const columns = [
+  { field: '_id', headerName: 'ID', width: 200 },
+  {
+    field: 'name',
+    headerName: 'Name',
+    width: 170,
+    editable: true,
+  },
+  {
+    field: 'phone',
+    headerName:'Phone',
+    type: 'number',
+    width: 170,
+    editable: true,
+  },
+  {
+    field: 'city',
+    headerName: 'City',
+    width: 170,
+    editable: true,
+  },
+  {
+    field: 'zipCode',
+    headerName: 'Zip Code',
+    width: 170,
+    editable: true,
+  },
+
+];
 
 const DroppointTable = () => {
 
 
   const [data, setData]=useState([])
+  const apiUrl = 'https://reviver-backend.herokuapp.com'
   const token = localStorage.getItem('token')
 
-  axios.interceptors.request.use(
-    config=>{
-      config.headers.authorization =`Bearer ${token}`;
-      return config
-    },
-    error =>{
-      return Promise.reject(error)
-    }
-  )
+  const authAxios = axios.create({
+    baseURL:apiUrl,
+    headers: {Authorization :`Bearer ${token}`}
+  })
+      
 
   useEffect(()=> {
-    axios.get('https://reviver-backend.herokuapp.com/droppoints')
+    authAxios.get(`${apiUrl}/droppoints`)
     .then(res=> {
       console.log("Data is", res.data)
       setData(res.data)
     })
     .catch(err=>console.log(err))
-  }, [])
+  }, 
+ // eslint-disable-next-line
+  [])
+
+  
   return (
-    <TableContainer component={Paper} className="table">
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell className="tableCell">Name</TableCell>
-            <TableCell className="tableCell">Phone</TableCell>
-            <TableCell className="tableCell">City</TableCell>
-            <TableCell className="tableCell">ZipCode</TableCell>
-            <TableCell className="tableCell">Status</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {data.map((row) => (
-            <TableRow key={row._id}>
-              <TableCell className="tableCell">{row.name}</TableCell>
-              <TableCell className="tableCell">{row.phone}</TableCell>
-              <TableCell className="tableCell">{row.city}</TableCell>
-              <TableCell className="tableCell">{row.zipCode}</TableCell>
-              <TableCell className="tableCell">
-                <span className="status"> Status </span>
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+    <Box sx={{ height: 500, width: '80%' }} className="Box-Table">
+    <DataGrid
+      getRowId={(row) => row._id}
+      rows={data}
+      columns={columns}
+      pageSize={5}
+      rowsPerPageOptions={[5]}
+      checkboxSelection
+      disableSelectionOnClick
+    />
+  </Box>
   )
 }
 

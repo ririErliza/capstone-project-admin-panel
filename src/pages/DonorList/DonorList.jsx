@@ -11,7 +11,10 @@ const DonorList = () => {
     
     <div className='listContainer'>
       <Navbar/>
-     
+      <div className='title'>
+  <h2>Donor List</h2>
+</div>
+
       <DonorTable/>
       
     </div>
