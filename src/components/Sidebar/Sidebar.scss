@@ -1,103 +1,98 @@
-.sidebar{
-    background-image:linear-gradient(to right,#02504d, #17817f);
-    flex:1;
+.sidebar {
+    flex: 1;
     border-right: 0.5px solid rgb(230, 227, 227);
-    font-family: Arial, Helvetica, sans-serif;
-    height: 100vh;
+    min-height: 100vh;
+    background-color: white;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+    .top {
+        height: 50px;
+         display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 10px;
+ 
+    }
+  
+    hr {
+      height: 0;
+      border: 0.5px solid rgb(230, 227, 227);
+    }
+  
+    .center {
+      padding-left: 10px;
+      margin-top:40px;
+  
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+  
+        .title {
+          font-size: 10px;
+          font-weight: bold;
+          color: #999;
+          margin-top: 15px;
+          margin-bottom: 5px;
+        }
+  
+        li {
+          display: flex;
+          align-items: center;
+          padding: 5px;
+          margin:15px;
+          cursor: pointer;
+  
+          &:hover {
+            border-bottom: 2px solid #08777566;
+          }
+  
+          .icon {
+            font-size: 18px;
+            color: #087776;
+          }
+  
+          span{
+              font-size: 15px;
+              font-weight: 500;
+              color: #888;
+              margin-left: 10px;
+          }
+        }
+      }
+    }
 
-    .top{
-        height: 70px;
+
+    .bottom{
+        height: 50px;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding-top: 20px;
+        margin-bottom: 10px;
+   
 
+      
+
+          Button{
+            color:#ffff;
+            width: 120px;
+            padding:8px;
+            border-radius: 50px;
+            background-color: #087776;
+            &:hover {
+                background-color: #129391;
+              }
+            
+
+          }
+
+          .icon{
+            font-size: 18px;
+            color: #ffff;
+            margin-right: 10px;
+          }
     }
-
-    hr{
-        height: 0;
-        border: 0.5px solid #17817f;
-    }
-
-    .center{
-        padding-left: 20px;
-
-        ul{
-            list-style: none;
-            margin:0;
-            padding:0;
-
-            li{
-                display: flex;
-                align-items: center;
-                padding: 5px;
-                cursor:pointer;
-                margin-top: 10px;
-
-                &:hover{
-                    background-color: #157977;
-                    border-radius: 20px;
-                    width: 150px;
-        
-                }
-
-                .icon{
-                    font-size: 20px;
-                    color: #f6fafa;
-                    padding-top: 10px;
-                }
-
-                span{
-        
-                    font-size: 17px;
-                    font-weight: 500;
-                    color: #f6fafa;
-                    margin-left: 10px;
-                    padding-top: 10px;
-                    
-                }
-            }
-        }
-    }
-
-    .bottom{
-        padding-left: 20px;
-        padding-top: 320px;
-
-        ul{
-            list-style: none;
-            margin:0;
-            padding:0;
-
-            li{
-                display: flex;
-                align-items: center;
-                padding: 5px;
-                cursor:pointer;
-
-                &:hover{
-                    background-color: #157977;
-                    border-radius: 20px;
-                    width: 150px;
-                
-                }
-
-                .icon{
-                    font-size: 25px;
-                    color: #f6fafa;
-                }
-
-                span{
-                    font-size: 20px;
-                    font-weight: 500;
-                    color: #f6fafa;
-                    margin-left: 10px;
-                }
-
-                #logoutButton{
-                    color:#ffff;
-                }
-            }
-        }
-    }
-}
+} 
