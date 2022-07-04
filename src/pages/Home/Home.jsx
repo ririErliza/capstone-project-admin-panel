@@ -24,12 +24,10 @@ const Home = () => {
 
         <Box id = "box-home">
         <Grid container spacing={2}>
-        <Grid item xs={6} md={6}>
-              <Typography variant="h5"> Welcome</Typography>
+        <Grid item xs={12} md={12}>
+              <Typography variant="h5"> Dashboard</Typography>
             </Grid>
-            <Grid item xs={6} md={6}>
-              xs=6 md=6
-            </Grid>
+            
             <Grid item xs={6} md={4}>
            <Widget text="Donations" number = "23566" icon={<CardGiftcardIcon fontSize='inherit'/>}/>
             </Grid>
