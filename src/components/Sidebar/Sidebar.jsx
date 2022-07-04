@@ -29,7 +29,7 @@ const Sidebar = () => {
                     alt="reviver logo"
                     /></span>
       </div>
-      <hr />
+  
       <div className="center">
         <ul>
           <Link to="/" style={{ textDecoration: "none" }}>
