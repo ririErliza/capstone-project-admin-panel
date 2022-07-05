@@ -1,8 +1,7 @@
 import React from 'react'
 import "./Navbar.scss"
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
-import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
-import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
+
 
 const Navbar = () => {
 
