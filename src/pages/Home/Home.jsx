@@ -8,6 +8,7 @@ import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
 import PushPinIcon from '@mui/icons-material/PushPin';
 import PersonIcon from '@mui/icons-material/Person';
 import Chart from '../../components/Chart/Chart';
+import PieChartWidget from '../../components/PieChartWidget/PieChartWidget';
 
 
 
@@ -37,13 +38,13 @@ const Home = () => {
             <Grid item xs={6} md={4}>
             <Widget text="Droppoints" number = "8" icon={<PushPinIcon fontSize='inherit'/>}/>
             </Grid>
-          
-            <Grid item xs={6} md={5}>
-              xs=6 md=6
-            </Grid>
             <Grid item xs={6} md={7}>
               <Chart title="Last 6 Months (Recycled Shoes)" aspect={2 / 1}/>
             </Grid>
+            <Grid item xs={6} md={5}>
+              <PieChartWidget/>
+            </Grid>
+          
       
         </Grid>
 
