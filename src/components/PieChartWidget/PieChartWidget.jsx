@@ -2,19 +2,33 @@ import "./PieChartWidget.scss";
 import React from 'react'
 import { Paper } from "@mui/material";
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
-import { PieChart, Pie, Tooltip} from 'recharts';
+import { PieChart, Pie, Cell, Tooltip} from 'recharts';
 
 const data = [
-  { name: 'Group A', value: 400 },
-  { name: 'Group B', value: 300 },
-  { name: 'Group C', value: 300 },
-  { name: 'Group D', value: 200 },
-  { name: 'Group E', value: 400 },
-  { name: 'Group F', value: 300 },
-  { name: 'Group G', value: 300 },
-  { name: 'Group H', value: 200 },
+  { name: 'Depok', value: 400 },
+  { name: 'Cilegon', value: 300 },
+  { name: 'Lampung', value: 300 },
+  { name: 'Bandung', value: 200 },
+  { name: 'Jogjakarta', value: 400 },
+  { name: 'Semarang', value: 300 },
+  { name: 'Surabaya', value: 300 },
+  { name: 'Malang', value: 200 },
 ];
 
+const COLORS = ['#087776', '#3e908f', '#396463', '#84d3d1', '#055654', '#98c3c2', '#0abeba', '#389391'];
+
+const RADIAN = Math.PI / 180;
+const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
+  const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+  const x = cx + radius * Math.cos(-midAngle * RADIAN);
+  const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+  return (
+    <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
+      {`${(percent * 100).toFixed(0)}%`}
+    </text>
+  );
+};
 
 const PieChartWidget = () => {
 
@@ -24,22 +38,25 @@ const PieChartWidget = () => {
 
       <PieChart width={400} height={275}>
           <Pie
-            dataKey="value"
-            isAnimationActive={false}
             data={data}
             cx="50%"
             cy="50%"
-            outerRadius={80}
-            fill="#087776"
-            label
-          />
-      
+            labelLine={false}
+            label={renderCustomizedLabel}
+            outerRadius={91}
+            fill="#8884d8"
+            dataKey="value"
+          >
+            {data.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+            ))}
+          </Pie>
           <Tooltip />
         </PieChart>
       <div id="chart-description">
       <ul>
       <li className="pc-text"><FiberManualRecordIcon className='icon' style={{ color: "#087776" }}/>Depok</li>
-      <li className="pc-text"><FiberManualRecordIcon className='icon'style={{ color: "##3e908f" }}/>Cilegon</li>
+      <li className="pc-text"><FiberManualRecordIcon className='icon'style={{ color: "#3e908f" }}/>Cilegon</li>
       <li className="pc-text"><FiberManualRecordIcon className='icon'style={{ color: "#396463" }}/>Lampung</li>
       <li className="pc-text"><FiberManualRecordIcon className='icon'style={{ color: "#84d3d1" }}/>Bandung</li>
     </ul>
