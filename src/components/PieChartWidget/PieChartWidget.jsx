@@ -20,8 +20,9 @@ const PieChartWidget = () => {
 
   return (
     <Paper elevation={3} id="paper">
+      <div className="title">Shoes by Drop Points</div>
 
-      <PieChart width={400} height={400}>
+      <PieChart width={400} height={275}>
           <Pie
             dataKey="value"
             isAnimationActive={false}
@@ -37,17 +38,17 @@ const PieChartWidget = () => {
         </PieChart>
       <div id="chart-description">
       <ul>
-      <li className="pc-text"><FiberManualRecordIcon className='icon' style={{ color: "blue" }}/>Depok</li>
-      <li className="pc-text"><FiberManualRecordIcon className='icon'style={{ color: "green" }}/>Cilegon</li>
-      <li className="pc-text"><FiberManualRecordIcon className='icon'style={{ color: "yellow" }}/>Lampung</li>
-      <li className="pc-text"><FiberManualRecordIcon className='icon'style={{ color: "purple" }}/>Bandung</li>
+      <li className="pc-text"><FiberManualRecordIcon className='icon' style={{ color: "#087776" }}/>Depok</li>
+      <li className="pc-text"><FiberManualRecordIcon className='icon'style={{ color: "##3e908f" }}/>Cilegon</li>
+      <li className="pc-text"><FiberManualRecordIcon className='icon'style={{ color: "#396463" }}/>Lampung</li>
+      <li className="pc-text"><FiberManualRecordIcon className='icon'style={{ color: "#84d3d1" }}/>Bandung</li>
     </ul>
     <ul>
      
-      <li className="pc-text"><FiberManualRecordIcon className='icon'style={{ color: "blue" }}/>Jogjakarta</li>
-      <li className="pc-text"><FiberManualRecordIcon className='icon'style={{ color: "blue" }}/>Semarang</li>
-      <li className="pc-text"><FiberManualRecordIcon className='icon'style={{ color: "blue" }}/>Surabaya</li>
-      <li className="pc-text"><FiberManualRecordIcon className='icon'style={{ color: "blue" }}/>Malang</li>
+      <li className="pc-text"><FiberManualRecordIcon className='icon'style={{ color: "#055654" }}/>Jogjakarta</li>
+      <li className="pc-text"><FiberManualRecordIcon className='icon'style={{ color: "#98c3c2" }}/>Semarang</li>
+      <li className="pc-text"><FiberManualRecordIcon className='icon'style={{ color: "#0abeba" }}/>Surabaya</li>
+      <li className="pc-text"><FiberManualRecordIcon className='icon'style={{ color: "#389391" }}/>Malang</li>
     </ul>
       </div>
     
