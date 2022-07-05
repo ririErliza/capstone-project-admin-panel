@@ -3,32 +3,32 @@ import "./VolunteerTable.scss";
 import axios from 'axios';
 import Box from '@mui/material/Box';
 import { DataGrid} from '@mui/x-data-grid';
+import { Link } from 'react-router-dom';
+import { Button } from '@mui/material';
 
 const columns = [
   { field: '_id', headerName: 'ID', width: 90 },
   {
     field: 'name',
     headerName: 'Name',
-    width: 150,
+    width: 100,
     editable: true,
   },
   {
     field: 'surname',
     headerName: 'Surname',
-    width: 150,
+    width: 100,
     editable: true,
   },
   {
     field: 'email',
     headerName: 'Email',
-    type: 'number',
     width: 110,
     editable: true,
   },
   {
     field: 'phone',
     headerName: 'Phone',
-    type: 'number',
     width: 110,
     editable: true,
   },
@@ -41,7 +41,7 @@ const columns = [
   {
     field: 'location',
     headerName: 'Location',
-    width: 150,
+    width: 100,
     editable: true,
   },
   {
@@ -78,13 +78,38 @@ const VolunteerTable = () => {
  // eslint-disable-next-line
   [])
 
-  
+  const handleDelete = (_id) => {
+    setData(data.filter((item) => item._id !== _id));
+  };
+
+  const actionColumn = [
+    {
+      field: "action",
+      headerName: "Action",
+      width: 200,
+      renderCell: (params) => {
+        return (
+          <div className="cellAction">
+            <Link to="/donors/edit" style={{ textDecoration: "none" }}>
+              <Button className="editButton">Edit</Button>
+            </Link>
+            <Button
+              className="deleteButton"
+              onClick={() => handleDelete(params.row._id)}
+            >
+              Delete
+            </Button>
+          </div>
+        );
+      },
+    },
+  ];
   return (
     <Box sx={{ height: 510, width: '90%' }} className="Box-Table">
     <DataGrid
       getRowId={(row) => row._id}
       rows={data}
-      columns={columns}
+      columns={columns.concat(actionColumn)}
       pageSize={5}
       rowsPerPageOptions={[5]}
       checkboxSelection

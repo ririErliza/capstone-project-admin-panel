@@ -3,6 +3,8 @@ import DroppointTable from '../../components/DroppointTable/DroppointTable';
 import Navbar from '../../components/Navbar/Navbar';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import "./DropPoints.scss"
+import AddIcon from '@mui/icons-material/Add';
+import { Button, Typography } from '@mui/material';
 
 const DropPoints = () => {
   return (
@@ -12,8 +14,9 @@ const DropPoints = () => {
   <div className='listContainer'>
     <Navbar/>
     <div className='title'>
-  <h2>Drop Points</h2>
-</div>
+    <Typography variant="h5">Drop Points</Typography>
+      <Button id="button-plus"> <AddIcon className='icon'/> </Button>
+    </div>
 
     <DroppointTable/>
     

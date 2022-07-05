@@ -3,6 +3,8 @@ import "./DroppointTable.scss";
 import axios from 'axios';
 import Box from '@mui/material/Box';
 import { DataGrid} from '@mui/x-data-grid';
+import { Link } from 'react-router-dom';
+import { Button } from '@mui/material';
 
 const columns = [
   { field: '_id', headerName: 'ID', width: 200 },
@@ -58,13 +60,40 @@ const DroppointTable = () => {
  // eslint-disable-next-line
   [])
 
+  const handleDelete = (_id) => {
+    setData(data.filter((item) => item._id !== _id));
+  };
+
+  const actionColumn = [
+    {
+      field: "action",
+      headerName: "Action",
+      width: 200,
+      renderCell: (params) => {
+        return (
+          <div className="cellAction">
+            <Link to="/donors/edit" style={{ textDecoration: "none" }}>
+              <Button className="editButton">Edit</Button>
+            </Link>
+            <Button
+              className="deleteButton"
+              onClick={() => handleDelete(params.row._id)}
+            >
+              Delete
+            </Button>
+          </div>
+        );
+      },
+    },
+  ];
+
   
   return (
-    <Box sx={{ height: 500, width: '80%' }} className="Box-Table">
+    <Box sx={{ height: 480, width: '90%' }} className="Box-Table">
     <DataGrid
       getRowId={(row) => row._id}
       rows={data}
-      columns={columns}
+      columns={columns.concat(actionColumn)}
       pageSize={5}
       rowsPerPageOptions={[5]}
       checkboxSelection

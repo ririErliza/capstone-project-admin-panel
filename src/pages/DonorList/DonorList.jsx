@@ -3,6 +3,7 @@ import Navbar from '../../components/Navbar/Navbar';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import DonorTable from '../../components/DonorTable/DonorTable';
 import "./DonorList.scss"
+import { Typography } from '@mui/material';
 
 const DonorList = () => {
   return (
@@ -12,7 +13,8 @@ const DonorList = () => {
     <div className='listContainer'>
       <Navbar/>
       <div className='title'>
-  <h2>Donor List</h2>
+      <Typography variant="h5">Donor List</Typography>
+ 
 </div>
 
       <DonorTable/>
