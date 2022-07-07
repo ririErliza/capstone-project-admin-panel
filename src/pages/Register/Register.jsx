@@ -43,6 +43,7 @@ const Register = () => {
 	})
 	.then((res)=>{
 		console.log(res.message);
+		alert("Successfully Registered! Thank you!")
 		navigate("/login")
 
 	})
