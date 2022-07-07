@@ -9,6 +9,8 @@ import {
 	IconButton,
 	InputAdornment,
 	Typography,
+	LinearProgress,
+	Fade,
 } from "@mui/material";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
@@ -16,6 +18,8 @@ import axios from 'axios';
 import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
+
+	const [loading, setLoading] = useState(false);
   const [values, setValues] = useState({
 	name:"",
 	surname:"",
@@ -28,6 +32,7 @@ const Register = () => {
   const navigate = useNavigate();
 
   const handleSubmit = (e) =>{
+	setLoading(true)
 	e.preventDefault();
 	axios
 	.post("https://reviver-backend.herokuapp.com/users/register",{
@@ -141,6 +146,18 @@ const Register = () => {
 					</Grid>
 				</Grid>
 				</form>
+				{loading && (
+        
+        <Fade
+          in={loading}
+          style={{
+            transitionDelay: loading ? '800ms' : '0ms',
+          }}
+          unmountOnExit
+        >
+          <LinearProgress  color='inherit' className='linear-prog'/>
+        </Fade>
+      )}
 				</Paper>
 				</Grid>
 			</Container>

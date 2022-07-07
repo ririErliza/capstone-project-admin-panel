@@ -23,9 +23,9 @@ function App() {
           <Route path="/register" exact element={<Register />}  />
           <Route path="/logout" element={<Logout />}  />
          
-          <Route path="/donors" element={<DonorList />}/>
-          <Route path="/volunteers" element={<VolunteerList />}  />
-          <Route path="/dropPoints" element={<DropPoints />}   />
+          {user && <Route path="/donors" element={<DonorList />}/> }
+          {user && <Route path="/volunteers" element={<VolunteerList />}  />}
+          {user && <Route path="/dropPoints" element={<DropPoints />}   />}
           <Route path="*" element={<NotFound />}  />
         </Routes>
 

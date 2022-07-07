@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import "./Login.scss";
 import {
 	Container,
+	Fade,
+	LinearProgress,
 	Button,
 	Grid,
 	Paper,
@@ -17,6 +19,8 @@ import { Link } from "react-router-dom";
 
 
 const Login = () => {
+	const [loading, setLoading] = useState(false);
+
   const [values, setValues] = useState({
     email: "",
     password: "",
@@ -26,6 +30,7 @@ const Login = () => {
   console.log(values)
 
   const handleSubmit = (e) =>{
+	setLoading(true)
 	e.preventDefault();
 	axios
 	.post("https://reviver-backend.herokuapp.com/users/login",{
@@ -34,6 +39,7 @@ const Login = () => {
 	})
 	.then((res)=>{
 		localStorage.setItem("token", res.data.accessToken);
+		setLoading(true);
 		window.location="/";
 	})
 	.catch(err=>console.error(err))
@@ -107,6 +113,7 @@ const Login = () => {
 	</Button>
 	</Grid>
 
+	
 	<Grid item>
 	<h4>New Here ?</h4>
 					<Link to="/register">
@@ -116,11 +123,27 @@ const Login = () => {
 					</Link>
 	</Grid>
 </Grid>
+
+
 </form>
+{loading && (
+        
+        <Fade
+          in={loading}
+          style={{
+            transitionDelay: loading ? '800ms' : '0ms',
+          }}
+          unmountOnExit
+        >
+          <LinearProgress  color='inherit' className='linear-prog'/>
+        </Fade>
+      )}
 
 </Paper>
 
 </Grid>
+
+
 </Container>
 		</div>
 	);
