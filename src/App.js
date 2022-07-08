@@ -8,6 +8,8 @@ import Logout from './pages/Logout/Logout';
 import Register from './pages/Register/Register';
 import NotFound from './pages/NotFound/NotFound';
 import VolunteerList from './pages/VolunteerList/VolunteerList';
+import AddDroppoint from './pages/AddDroppoint/AddDroppoint';
+import VolunteerDetails from './pages/VolunteerDetails/VolunteerDetails';
 //import Sidebar from './components/Sidebar/Sidebar';
 //import Navbar from './components/Navbar/Navbar';
 
@@ -25,7 +27,9 @@ function App() {
          
           {user && <Route path="/donors" element={<DonorList />}/> }
           {user && <Route path="/volunteers" element={<VolunteerList />}  />}
+          {user && <Route path="/volunteers/:id" element={<VolunteerDetails />}  />}
           {user && <Route path="/dropPoints" element={<DropPoints />}   />}
+          {user && <Route path="/dropPoints/add" element={<AddDroppoint />}   />}
           <Route path="*" element={<NotFound />}  />
         </Routes>
 

@@ -3,8 +3,8 @@ import "./VolunteerTable.scss";
 import axios from 'axios';
 import Box from '@mui/material/Box';
 import { DataGrid} from '@mui/x-data-grid';
-import { Link } from 'react-router-dom';
 import { Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const columns = [
   { field: '_id', headerName: 'ID', width: 90 },
@@ -57,6 +57,7 @@ const columns = [
 
 const VolunteerTable = () => {
 
+
   const [data, setData]=useState([])
   const apiUrl = 'https://reviver-backend.herokuapp.com'
   const token = localStorage.getItem('token')
@@ -90,9 +91,10 @@ const VolunteerTable = () => {
       renderCell: (params) => {
         return (
           <div className="cellAction">
-            <Link to="/donors/edit" style={{ textDecoration: "none" }}>
-              <Button className="editButton">Edit</Button>
-            </Link>
+          
+          <Link to={"/volunteers/" + params.row._id}>
+            <Button className="editButton">Edit</Button>
+          </Link>
             <Button
               className="deleteButton"
               onClick={() => handleDelete(params.row._id)}
@@ -110,11 +112,10 @@ const VolunteerTable = () => {
       getRowId={(row) => row._id}
       rows={data}
       columns={columns.concat(actionColumn)}
-      pageSize={5}
-      rowsPerPageOptions={[5]}
-      checkboxSelection
-      disableSelectionOnClick
+      pageSize={7}
+      rowsPerPageOptions={[7]}
       loading={!data.length}
+    
     />
   </Box>
   )

@@ -25,7 +25,7 @@ const Home = () => {
 
         <Box id = "box-home">
         <Grid container spacing={2}>
-        <Grid item xs={12} md={12}>
+            <Grid item xs={12} md={12}>
               <Typography variant="h5" className='title'> Dashboard</Typography>
             </Grid>
             

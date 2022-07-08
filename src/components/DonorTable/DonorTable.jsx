@@ -74,8 +74,8 @@ const DonorTable = () => {
       getRowId={(row) => row._id}
       rows={data}
       columns={columns.concat(actionColumn)}
-      pageSize={5}
-      rowsPerPageOptions={[5]}
+      pageSize={7}
+      rowsPerPageOptions={[7]}
       checkboxSelection
       disableSelectionOnClick
       loading={!data.length}
