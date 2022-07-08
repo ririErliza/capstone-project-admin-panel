@@ -8,7 +8,7 @@ const VolunteerDetails = () => {
 
 const params= useParams();
 
-console.log(params.id)
+console.log("paramsId:", params.id, "params:", params)
 
 const [data, setData]=useState([])
   const apiUrl = 'https://reviver-backend.herokuapp.com'
@@ -34,9 +34,9 @@ const [data, setData]=useState([])
   return (
     <>
     <div>id : {data._id}</div>
-    <div>name</div>
-    <div>email</div>
-    <div>Client stuff : {JSON.stringify(params)}</div>
+    <div>name : {data.name}</div>
+    <div>email: {data.email}</div>
+    <div>Client stuff : {params.id}</div>
     </>
   )
 }

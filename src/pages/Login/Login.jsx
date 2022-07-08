@@ -63,7 +63,7 @@ const Login = () => {
 >
 
 <Paper elevation={2} sx={{ padding: 3 }}>
-<Typography>
+<Typography className='title'>
 	<h2>Login to Your Account</h2>
 
 </Typography>
