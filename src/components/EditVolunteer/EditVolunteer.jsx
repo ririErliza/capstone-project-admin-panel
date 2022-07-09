@@ -1,6 +1,7 @@
 import {Button, Grid, Paper, TextField, Typography } from '@mui/material'
 import axios from 'axios';
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import "./EditVolunteer.scss";
 
 
 const EditVolunteer = ({props, data}) => {
@@ -50,7 +51,7 @@ const EditVolunteer = ({props, data}) => {
   return (
    
 
-    <Paper elevation={2} sx={{ padding: 3 }}>
+    <Paper elevation={2} sx={{ padding: 2 }}>
 					<Typography variant="h5">
 					Edit Data
 					</Typography>

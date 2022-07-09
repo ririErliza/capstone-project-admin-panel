@@ -45,18 +45,15 @@ const [data, setData]=useState([])
         <Navbar/>
 
         <Grid container 
-        spacing={5} 
+        spacing={2} 
         direction="column"
         justifyContent="center"
-        style={{ maxHeight: "60vh", maxWidth:"90%", marginTop:"50px", marginLeft:"50px" }}>
+        style={{ maxHeight: "60vh", maxWidth:"90%", marginTop:"80px", marginLeft:"40px" }}>
       
           <Grid item xs={6} md={6}>
-            <Paper elevation={2} sx={{ padding: 3 }}>
-              <Typography variant="h5" className='title'> Volunteer Data</Typography>
+            <Paper elevation={2} sx={{ padding: 2 }} id="paper-data">
+              <Typography variant="h5"> Volunteer Data</Typography>
                         
-              <form >
-                <Grid container direction="column" spacing={2}>
-                  <Grid item>
                     <TextField
                       type="string"
                       fullWidth
@@ -64,8 +61,8 @@ const [data, setData]=useState([])
                       value={data.name}
                       variant="filled"
                     />
-                  </Grid>
-                  <Grid item>
+                  
+               
                     <TextField
                       type="string"
                       fullWidth
@@ -73,8 +70,8 @@ const [data, setData]=useState([])
                       value={data.surname}
                       variant="filled"
                     />
-                  </Grid>
-                  <Grid item>
+               
+                
                     <TextField
                       type="email"
                       fullWidth
@@ -82,8 +79,8 @@ const [data, setData]=useState([])
                       value={data.email}
                       variant="filled"
                     />
-                  </Grid>
-                  <Grid item>
+                
+                
                     <TextField
                       type="string"
                       fullWidth
@@ -91,8 +88,8 @@ const [data, setData]=useState([])
                       value={data.phone}
                       variant="filled"
                     />
-                  </Grid>
-                  <Grid item>
+                 
+              
                     <TextField
                       type="string"
                       fullWidth
@@ -100,8 +97,7 @@ const [data, setData]=useState([])
                       value={data.choiceOfJob}
                       variant="filled"
                     />
-                  </Grid>
-                  <Grid item>
+                  
                     <TextField
                       type="string"
                       fullWidth
@@ -109,8 +105,7 @@ const [data, setData]=useState([])
                       value={data.location}
                       variant="filled"
                     />
-                  </Grid>
-                  <Grid item>
+                  
                     <TextField
                       type="string"
                       fullWidth
@@ -118,9 +113,8 @@ const [data, setData]=useState([])
                       value={data.duration}
                       variant="filled"
                     />
-                  </Grid>
-                </Grid>
-            </form>
+               
+          
           </Paper>
         </Grid>
 
@@ -131,7 +125,7 @@ const [data, setData]=useState([])
    
           
       
-        </Grid>
+      </Grid>
 
     
 
