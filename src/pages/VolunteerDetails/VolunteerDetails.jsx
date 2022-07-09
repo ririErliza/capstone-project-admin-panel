@@ -1,7 +1,13 @@
 // import React, { useEffect, useState } from 'react'
+import "./VolunteerDetails.scss"
+import {Container, Grid, Paper, TextField, Typography } from '@mui/material';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'
+import Navbar from '../../components/Navbar/Navbar';
+import Sidebar from '../../components/Sidebar/Sidebar';
+import EditVolunteer from "../../components/EditVolunteer/EditVolunteer";
+//import DataVolunteer from "../../components/DataVolunteer/DataVolunteer";
 
 
 const VolunteerDetails = () => {
@@ -32,12 +38,138 @@ const [data, setData]=useState([])
   [])
 
   return (
-    <>
-    <div>id : {data._id}</div>
-    <div>name : {data.name}</div>
-    <div>email: {data.email}</div>
-    <div>Client stuff : {params.id}</div>
-    </>
+    <div className="list">
+      <Sidebar/>
+    
+      <div className='listContainer'>
+        <Navbar/>
+
+        <Grid container spacing={2}>
+            <Grid item xs={12} md={12}>
+              <Typography variant="h5" className='title'> Volunteer Data</Typography>
+            </Grid>
+            
+            <Grid item xs={6} md={6}>
+            <Container maxWidth="sm" style={{ marginTop:"50px" }}>
+		<Grid container
+			spacing={2}
+			direction="column"
+			justifyContent="center"
+			style={{ maxHeight: "60vh", maxWidth:"400px" }}
+		>
+                <Paper elevation={2} sx={{ padding: 3 }}>
+				
+				<form >
+				<Grid container direction="column" spacing={2}>
+				<Grid item>
+						<TextField
+							type="string"
+							fullWidth
+							label="Name"
+							value={data.name}
+							variant="filled"
+						
+						/>
+					</Grid>
+					<Grid item>
+						<TextField
+							type="string"
+							fullWidth
+							label="Surname"
+							value={data.surname}
+							variant="filled"
+					
+						/>
+					</Grid>
+					<Grid item>
+						<TextField
+							type="email"
+							fullWidth
+							label="Email"
+							value={data.email}
+							variant="filled"
+						
+						/>
+					</Grid>
+
+                    <Grid item>
+						<TextField
+							type="string"
+							fullWidth
+							label="Phone"
+							value={data.phone}
+							variant="filled"
+						
+						/>
+					</Grid>
+
+                    <Grid item>
+						<TextField
+							type="string"
+							fullWidth
+							label="Choice of Job"
+							value={data.choiceOfJob}
+							variant="filled"
+					
+						/>
+					</Grid>
+
+                    <Grid item>
+						<TextField
+							type="string"
+							fullWidth
+							label="Location"
+							value={data.location}
+							variant="filled"
+						
+						/>
+					</Grid>
+
+                    <Grid item>
+						<TextField
+							type="string"
+							fullWidth
+							label="Duration"
+							value={data.duration}
+							variant="filled"
+						
+			
+						/>
+					</Grid>
+
+              
+				
+					
+
+					
+				</Grid>
+				</form>
+	
+        
+
+				</Paper>
+        </Grid>
+    </Container>
+            </Grid>
+            <Grid item xs={6} md={6}>
+            <EditVolunteer data={data} props={params.id}/>
+            </Grid>
+            
+   
+          
+      
+        </Grid>
+
+    
+
+            
+        
+      </div>
+    </div>
+
+  
+
+
   )
 }
 

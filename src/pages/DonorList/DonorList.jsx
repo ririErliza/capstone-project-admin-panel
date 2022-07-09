@@ -10,16 +10,16 @@ const DonorList = () => {
     <div className="list">
       <Sidebar/>
     
-    <div className='listContainer'>
-      <Navbar/>
-      <div className='title'>
-      <Typography variant="h5">Donor List</Typography>
- 
-</div>
+      <div className='listContainer'>
+        <Navbar/>
+          <div className='title'>
+          <Typography variant="h5">Donor List</Typography>
+    
+          </div>
 
-      <DonorTable/>
-      
-    </div>
+            <DonorTable/>
+        
+      </div>
     </div>
   )
 }
