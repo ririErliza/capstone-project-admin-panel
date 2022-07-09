@@ -66,6 +66,7 @@ const EditVolunteer = ({props, data}) => {
 							placeholder={data.name}
 							variant="standard"
 							size="small"
+							color="success"
 							onChange={(e)=>setValues({...values, name:e.target.value})}
 						/>
 				</Grid>
@@ -77,6 +78,7 @@ const EditVolunteer = ({props, data}) => {
 							placeholder={data.surname}
 							variant="standard"
 							size="small"
+							color="success"
 							onChange={(e)=>setValues({...values, surname:e.target.value})}
 						/>
 				</Grid>
@@ -88,6 +90,7 @@ const EditVolunteer = ({props, data}) => {
 							placeholder={data.email}
 							variant="standard"
 							size="small"
+							color="success"
 							onChange={(e)=>setValues({...values, email:e.target.value})}
 						/>
 				</Grid>
@@ -100,6 +103,7 @@ const EditVolunteer = ({props, data}) => {
 							placeholder={data.phone}
 							variant="standard"
 							size="small"
+							color="success"
 							onChange={(e)=>setValues({...values, phone:e.target.value})}
 						/>
 				</Grid>
@@ -112,6 +116,7 @@ const EditVolunteer = ({props, data}) => {
 							placeholder={data.choiceOfJob}
 							variant="standard"
 							size="small"
+							color="success"
 							onChange={(e)=>setValues({...values, job:e.target.value})}
 						/>
 				</Grid>
@@ -124,6 +129,7 @@ const EditVolunteer = ({props, data}) => {
 							placeholder={data.location}
 							variant="standard"
 							size="small"
+							color="success"
 							onChange={(e)=>setValues({...values, location:e.target.value})}
 						/>
 				</Grid>
@@ -136,6 +142,7 @@ const EditVolunteer = ({props, data}) => {
 							placeholder={data.duration}
 							variant="standard"
 							size="small"
+							color="success"
 							onChange={(e)=>setValues({...values, duration:e.target.value})}
 						/>
 				</Grid>

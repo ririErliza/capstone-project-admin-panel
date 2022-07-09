@@ -52,72 +52,81 @@ const [data, setData]=useState([])
             <Paper elevation={2} sx={{ padding: 2 }} id="paper-data">
               
               <Typography variant="h5" id="data-text"> Volunteer Data</Typography>
+
+    
                         
                     <TextField
-                      type="string"
+            
                       fullWidth
                       label="Name"
                       value={data.name}
                       className="textField"
+                      variant="filled"
                       
                     />
                   
                
                     <TextField
-                      type="string"
+                     
                       fullWidth
                       label="Surname"
                       value={data.surname}
                       className="textField"
+                      variant="filled"
                       
                     />
                
                 
                     <TextField
-                      type="email"
+                 
                       fullWidth
                       label="Email"
                       value={data.email}
                       className="textField"
+                      variant="filled"
                       
                     />
                 
                 
                     <TextField
-                      type="string"
+                    
                       fullWidth
                       label="Phone"
                       value={data.phone}
                       className="textField"
+                      variant="filled"
                       
                     />
                  
               
                     <TextField
-                      type="string"
+                     
                       fullWidth
                       label="Choice of Job"
                       value={data.choiceOfJob}
                       className="textField"
+                      variant="filled"
                       
                     />
                   
                     <TextField
-                      type="string"
+                   
                       fullWidth
                       label="Location"
                       value={data.location}
                       className="textField"
+                      variant="filled"
                       
                     />
                   
+          
+
                     <TextField
-                      type="string"
-                      fullWidth
-                      label="Duration"
-                      value={data.duration}
-                     className="textField"
-                    />
+                    fullWidth
+                  label="Duration"
+                  value={data.duration}
+                  variant="filled"
+                  />
                
               
           </Paper>
