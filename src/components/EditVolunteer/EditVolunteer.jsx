@@ -56,7 +56,8 @@ const EditVolunteer = ({props, data}) => {
 			Edit Data
 		</Typography>
 		<form onSubmit={handleSubmit}>
-			<Grid container direction="column" spacing={2}>
+			<Grid container direction="column" spacing={2}
+					style={{ fontSize:"10px" }}>
 				<Grid item>
 						<TextField
 							type="string"
@@ -64,6 +65,7 @@ const EditVolunteer = ({props, data}) => {
 							label="Enter your first name"
 							placeholder={data.name}
 							variant="standard"
+							size="small"
 							onChange={(e)=>setValues({...values, name:e.target.value})}
 						/>
 				</Grid>
@@ -74,7 +76,7 @@ const EditVolunteer = ({props, data}) => {
 							label="Enter your last name"
 							placeholder={data.surname}
 							variant="standard"
-				
+							size="small"
 							onChange={(e)=>setValues({...values, surname:e.target.value})}
 						/>
 				</Grid>
@@ -85,7 +87,7 @@ const EditVolunteer = ({props, data}) => {
 							label="Enter your email"
 							placeholder={data.email}
 							variant="standard"
-							
+							size="small"
 							onChange={(e)=>setValues({...values, email:e.target.value})}
 						/>
 				</Grid>
@@ -97,7 +99,7 @@ const EditVolunteer = ({props, data}) => {
 							label="Enter your phone"
 							placeholder={data.phone}
 							variant="standard"
-						
+							size="small"
 							onChange={(e)=>setValues({...values, phone:e.target.value})}
 						/>
 				</Grid>
@@ -109,7 +111,7 @@ const EditVolunteer = ({props, data}) => {
 							label="Enter your choice of job"
 							placeholder={data.choiceOfJob}
 							variant="standard"
-							
+							size="small"
 							onChange={(e)=>setValues({...values, job:e.target.value})}
 						/>
 				</Grid>
@@ -121,7 +123,7 @@ const EditVolunteer = ({props, data}) => {
 							label="Enter your choice of location"
 							placeholder={data.location}
 							variant="standard"
-							
+							size="small"
 							onChange={(e)=>setValues({...values, location:e.target.value})}
 						/>
 				</Grid>
@@ -133,13 +135,13 @@ const EditVolunteer = ({props, data}) => {
 							label="Enter your choice of duration"
 							placeholder={data.duration}
 							variant="standard"
-							
+							size="small"
 							onChange={(e)=>setValues({...values, duration:e.target.value})}
 						/>
 				</Grid>
 
                 <Grid item>
-					<Button id="button-green" type="submit" fullWidth variant="outlined">
+					<Button type="submit" fullWidth variant="outlined" color="success">
 						UPDATE
 					</Button>
                 </Grid>

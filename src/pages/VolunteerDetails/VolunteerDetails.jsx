@@ -7,6 +7,7 @@ import { useParams } from 'react-router-dom'
 import Navbar from '../../components/Navbar/Navbar';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import EditVolunteer from "../../components/EditVolunteer/EditVolunteer";
+import { Box } from "@mui/system";
 //import DataVolunteer from "../../components/DataVolunteer/DataVolunteer";
 
 
@@ -43,24 +44,22 @@ const [data, setData]=useState([])
     
       <div className='listContainer'>
         <Navbar/>
-
-        <Grid container 
-        spacing={2} 
-        direction="column"
-        justifyContent="center"
-        style={{ maxHeight: "60vh", maxWidth:"90%", marginTop:"80px", marginLeft:"50px" }}>
+       
+        <Box id = "box-volunteerd">
+        <Grid container spacing={2} >
       
           <Grid item xs={6} md={6}>
             <Paper elevation={2} sx={{ padding: 2 }} id="paper-data">
-              <Grid>
-              <Typography variant="h5"> Volunteer Data</Typography>
+              
+              <Typography variant="h5" id="data-text"> Volunteer Data</Typography>
                         
                     <TextField
                       type="string"
                       fullWidth
                       label="Name"
                       value={data.name}
-                      variant="filled"
+                      className="textField"
+                      
                     />
                   
                
@@ -69,7 +68,8 @@ const [data, setData]=useState([])
                       fullWidth
                       label="Surname"
                       value={data.surname}
-                      variant="filled"
+                      className="textField"
+                      
                     />
                
                 
@@ -78,7 +78,8 @@ const [data, setData]=useState([])
                       fullWidth
                       label="Email"
                       value={data.email}
-                      variant="filled"
+                      className="textField"
+                      
                     />
                 
                 
@@ -87,7 +88,8 @@ const [data, setData]=useState([])
                       fullWidth
                       label="Phone"
                       value={data.phone}
-                      variant="filled"
+                      className="textField"
+                      
                     />
                  
               
@@ -96,7 +98,8 @@ const [data, setData]=useState([])
                       fullWidth
                       label="Choice of Job"
                       value={data.choiceOfJob}
-                      variant="filled"
+                      className="textField"
+                      
                     />
                   
                     <TextField
@@ -104,7 +107,8 @@ const [data, setData]=useState([])
                       fullWidth
                       label="Location"
                       value={data.location}
-                      variant="filled"
+                      className="textField"
+                      
                     />
                   
                     <TextField
@@ -112,14 +116,15 @@ const [data, setData]=useState([])
                       fullWidth
                       label="Duration"
                       value={data.duration}
-                      variant="filled"
+                     className="textField"
                     />
                
-               </Grid>
+              
           </Paper>
         </Grid>
 
-        <Grid item xs={6} md={6}>
+        <Grid item xs={6} md={6} >
+				
             <EditVolunteer data={data} props={params.id}/>
         </Grid>
             
@@ -127,6 +132,8 @@ const [data, setData]=useState([])
           
       
       </Grid>
+
+      </Box>
 
     
 
