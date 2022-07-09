@@ -1,5 +1,4 @@
 import {Button, Grid, Paper, TextField, Typography } from '@mui/material'
-import { Container } from '@mui/system';
 import axios from 'axios';
 import React, { useState } from 'react'
 
@@ -49,14 +48,8 @@ const EditVolunteer = ({props, data}) => {
         .catch(err=>console.error(err))
       }
   return (
-    <Container maxWidth="sm" style={{ marginTop:"50px" }}>
-				<Grid
-					container
-					spacing={2}
-					direction="column"
-					justifyContent="center"
-					style={{ maxHeight: "60vh", maxWidth:"400px" }}
-				>
+   
+
     <Paper elevation={2} sx={{ padding: 3 }}>
 					<Typography variant="h5">
 					Edit Data
@@ -159,8 +152,8 @@ const EditVolunteer = ({props, data}) => {
         
 
 				</Paper>
-                </Grid>
-                </Container>
+    
+        
   )
 }
 
