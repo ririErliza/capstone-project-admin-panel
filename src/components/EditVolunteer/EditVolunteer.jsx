@@ -49,14 +49,14 @@ const EditVolunteer = ({props, data}) => {
         .catch(err=>console.error(err))
       }
   return (
-   
 
     <Paper elevation={2} sx={{ padding: 2 }}>
-					<Typography variant="h5">
-					Edit Data
-					</Typography>
-				<form onSubmit={handleSubmit}>
-				<Grid container direction="column" spacing={2}>
+		
+		<Typography variant="h5">
+			Edit Data
+		</Typography>
+		<form onSubmit={handleSubmit}>
+			<Grid container direction="column" spacing={2}>
 				<Grid item>
 						<TextField
 							type="string"
@@ -66,8 +66,8 @@ const EditVolunteer = ({props, data}) => {
 							variant="standard"
 							onChange={(e)=>setValues({...values, name:e.target.value})}
 						/>
-					</Grid>
-					<Grid item>
+				</Grid>
+				<Grid item>
 						<TextField
 							type="string"
 							fullWidth
@@ -77,8 +77,8 @@ const EditVolunteer = ({props, data}) => {
 				
 							onChange={(e)=>setValues({...values, surname:e.target.value})}
 						/>
-					</Grid>
-					<Grid item>
+				</Grid>
+				<Grid item>
 						<TextField
 							type="email"
 							fullWidth
@@ -88,9 +88,9 @@ const EditVolunteer = ({props, data}) => {
 							
 							onChange={(e)=>setValues({...values, email:e.target.value})}
 						/>
-					</Grid>
+				</Grid>
 
-                    <Grid item>
+                <Grid item>
 						<TextField
 							type="string"
 							fullWidth
@@ -100,9 +100,9 @@ const EditVolunteer = ({props, data}) => {
 						
 							onChange={(e)=>setValues({...values, phone:e.target.value})}
 						/>
-					</Grid>
+				</Grid>
 
-                    <Grid item>
+                <Grid item>
 						<TextField
 							type="string"
 							fullWidth
@@ -112,9 +112,9 @@ const EditVolunteer = ({props, data}) => {
 							
 							onChange={(e)=>setValues({...values, job:e.target.value})}
 						/>
-					</Grid>
+				</Grid>
 
-                    <Grid item>
+                <Grid item>
 						<TextField
 							type="string"
 							fullWidth
@@ -124,9 +124,9 @@ const EditVolunteer = ({props, data}) => {
 							
 							onChange={(e)=>setValues({...values, location:e.target.value})}
 						/>
-					</Grid>
+				</Grid>
 
-                    <Grid item>
+                <Grid item>
 						<TextField
 							type="string"
 							fullWidth
@@ -136,23 +136,23 @@ const EditVolunteer = ({props, data}) => {
 							
 							onChange={(e)=>setValues({...values, duration:e.target.value})}
 						/>
-					</Grid>
+				</Grid>
 
-                    <Grid item>
+                <Grid item>
 					<Button id="button-green" type="submit" fullWidth variant="outlined">
 						UPDATE
 					</Button>
-                    </Grid>
+                </Grid>
 
 					
 
 					
-				</Grid>
-				</form>
+			</Grid>
+		</form>
 	
         
 
-				</Paper>
+	</Paper>
     
         
   )

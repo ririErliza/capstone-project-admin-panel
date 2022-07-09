@@ -48,10 +48,11 @@ const [data, setData]=useState([])
         spacing={2} 
         direction="column"
         justifyContent="center"
-        style={{ maxHeight: "60vh", maxWidth:"90%", marginTop:"80px", marginLeft:"40px" }}>
+        style={{ maxHeight: "60vh", maxWidth:"90%", marginTop:"80px", marginLeft:"50px" }}>
       
           <Grid item xs={6} md={6}>
             <Paper elevation={2} sx={{ padding: 2 }} id="paper-data">
+              <Grid>
               <Typography variant="h5"> Volunteer Data</Typography>
                         
                     <TextField
@@ -114,7 +115,7 @@ const [data, setData]=useState([])
                       variant="filled"
                     />
                
-          
+               </Grid>
           </Paper>
         </Grid>
 
