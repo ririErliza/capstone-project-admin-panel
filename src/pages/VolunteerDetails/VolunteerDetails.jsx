@@ -1,6 +1,6 @@
 // import React, { useEffect, useState } from 'react'
 import "./VolunteerDetails.scss"
-import {Container, Grid, Paper, TextField, Typography } from '@mui/material';
+import { Grid, Paper, TextField, Typography } from '@mui/material';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'
@@ -55,89 +55,78 @@ const [data, setData]=useState([])
               <Typography variant="h5" className='title'> Volunteer Data</Typography>
                         
               <form >
-              <Grid container direction="column" spacing={2}>
-                <Grid item>
-                  <TextField
-                    type="string"
-                    fullWidth
-                    label="Name"
-                    value={data.name}
-                    variant="filled"
-                  />
+                <Grid container direction="column" spacing={2}>
+                  <Grid item>
+                    <TextField
+                      type="string"
+                      fullWidth
+                      label="Name"
+                      value={data.name}
+                      variant="filled"
+                    />
+                  </Grid>
+                  <Grid item>
+                    <TextField
+                      type="string"
+                      fullWidth
+                      label="Surname"
+                      value={data.surname}
+                      variant="filled"
+                    />
+                  </Grid>
+                  <Grid item>
+                    <TextField
+                      type="email"
+                      fullWidth
+                      label="Email"
+                      value={data.email}
+                      variant="filled"
+                    />
+                  </Grid>
+                  <Grid item>
+                    <TextField
+                      type="string"
+                      fullWidth
+                      label="Phone"
+                      value={data.phone}
+                      variant="filled"
+                    />
+                  </Grid>
+                  <Grid item>
+                    <TextField
+                      type="string"
+                      fullWidth
+                      label="Choice of Job"
+                      value={data.choiceOfJob}
+                      variant="filled"
+                    />
+                  </Grid>
+                  <Grid item>
+                    <TextField
+                      type="string"
+                      fullWidth
+                      label="Location"
+                      value={data.location}
+                      variant="filled"
+                    />
+                  </Grid>
+                  <Grid item>
+                    <TextField
+                      type="string"
+                      fullWidth
+                      label="Duration"
+                      value={data.duration}
+                      variant="filled"
+                    />
+                  </Grid>
                 </Grid>
-                <Grid item>
-                  <TextField
-                    type="string"
-                    fullWidth
-                    label="Surname"
-                    value={data.surname}
-                    variant="filled"
-                  />
-                </Grid>
-                <Grid item>
-                  <TextField
-                    type="email"
-                    fullWidth
-                    label="Email"
-                    value={data.email}
-                    variant="filled"
-                  />
-                </Grid>
-                <Grid item>
-                  <TextField
-                    type="string"
-                    fullWidth
-                    label="Phone"
-                    value={data.phone}
-                    variant="filled"
-                  />
-                </Grid>
-                <Grid item>
-                  <TextField
-                    type="string"
-                    fullWidth
-                    label="Choice of Job"
-                    value={data.choiceOfJob}
-                    variant="filled"
-                  />
-                </Grid>
-                <Grid item>
-                  <TextField
-                    type="string"
-                    fullWidth
-                    label="Location"
-                    value={data.location}
-                    variant="filled"
-                  />
-                </Grid>
-                <Grid item>
-                  <TextField
-                    type="string"
-                    fullWidth
-                    label="Duration"
-                    value={data.duration}
-                    variant="filled"
-                  />
-                </Grid>
+            </form>
+          </Paper>
+        </Grid>
 
-                              
-                        
-                          
-
-                          
-                        </Grid>
-                        </form>
-                  
-                        
-
-                        </Paper>
-                      
-
-            </Grid>
-
-            <Grid item xs={6} md={6}>
+        <Grid item xs={6} md={6}>
             <EditVolunteer data={data} props={params.id}/>
-            </Grid>
+        </Grid>
             
    
           
