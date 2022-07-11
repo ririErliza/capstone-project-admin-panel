@@ -45,7 +45,7 @@ const [data, setData]=useState([])
       <div className='listContainer'>
         <Navbar/>
        
-        <Box id = "box-Donord">
+        <Box id = "box-donord">
         <Grid container spacing={2} >
       
           <Grid item xs={6} md={6}>
@@ -72,16 +72,13 @@ const [data, setData]=useState([])
                     </div>
                     <div className="text-div">
                       <div className="title-div">Choice of Job</div>
-                      <div className="details-div">{data.choiceOfJob}</div>
+                      <div className="details-div">{data.numberOfShoes}</div>
                     </div>
                     <div className="text-div">
                       <div className="title-div">Location</div>
-                      <div className="details-div">{data.location}</div>
+                      <div className="details-div">{data.dropPoints}</div>
                     </div>
-                    <div className="text-div">
-                      <div className="title-div">Duration</div>
-                      <div className="details-div">{data.duration}</div>
-                    </div>
+                  
                     <div className="text-div">
                       <div className="title-div">Date created</div>
                       <div className="details-div">{(data.createdAt)}</div>

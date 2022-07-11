@@ -61,7 +61,7 @@ const EditDonor = ({props, data}) => {
 						<TextField
 							type="string"
 							fullWidth
-							label="Enter your first name"
+							label="Name"
 							placeholder={data.name}
 							variant="standard"
 							size="small"
@@ -73,7 +73,7 @@ const EditDonor = ({props, data}) => {
 						<TextField
 							type="string"
 							fullWidth
-							label="Enter your last name"
+							label="Surname"
 							placeholder={data.surname}
 							variant="standard"
 							size="small"
@@ -85,7 +85,7 @@ const EditDonor = ({props, data}) => {
 						<TextField
 							type="email"
 							fullWidth
-							label="Enter your email"
+							label="Email address"
 							placeholder={data.email}
 							variant="standard"
 							size="small"
@@ -98,7 +98,7 @@ const EditDonor = ({props, data}) => {
 						<TextField
 							type="string"
 							fullWidth
-							label="Enter your phone"
+							label="Phone number"
 							placeholder={data.phone}
 							variant="standard"
 							size="small"
@@ -111,7 +111,7 @@ const EditDonor = ({props, data}) => {
 						<TextField
 							type="string"
 							fullWidth
-							label="Enter your choice of job"
+							label="Amount of shoes"
 							placeholder={data.numberOfShoes}
 							variant="standard"
 							size="small"
@@ -124,7 +124,7 @@ const EditDonor = ({props, data}) => {
 						<TextField
 							type="string"
 							fullWidth
-							label="Enter your choice of location"
+							label="Drop Point"
 							placeholder={data.dropPoints}
 							variant="standard"
 							size="small"

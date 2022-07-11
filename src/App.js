@@ -10,6 +10,7 @@ import NotFound from './pages/NotFound/NotFound';
 import VolunteerList from './pages/VolunteerList/VolunteerList';
 import AddDroppoint from './pages/AddDroppoint/AddDroppoint';
 import VolunteerDetails from './pages/VolunteerDetails/VolunteerDetails';
+import DonorDetails from './pages/DonorDetails/DonorDetails';
 //import Sidebar from './components/Sidebar/Sidebar';
 //import Navbar from './components/Navbar/Navbar';
 
@@ -26,6 +27,7 @@ function App() {
           <Route path="/logout" element={<Logout />}  />
          
           {user && <Route path="/donors" element={<DonorList />}/> }
+          {user && <Route path="/donors/:id" element={<DonorDetails />}/> }
           {user && <Route path="/volunteers" element={<VolunteerList />}  />}
           {user && <Route path="/volunteers/:id" element={<VolunteerDetails />}  />}
           {user && <Route path="/dropPoints" element={<DropPoints />}   />}
