@@ -112,11 +112,11 @@ const EditDonor = ({props, data}) => {
 							type="string"
 							fullWidth
 							label="Enter your choice of job"
-							placeholder={data.choiceOfJob}
+							placeholder={data.numberOfShoes}
 							variant="standard"
 							size="small"
 							color="success"
-							onChange={(e)=>setValues({...values, job:e.target.value})}
+							onChange={(e)=>setValues({...values, amount:e.target.value})}
 						/>
 				</Grid>
 
@@ -125,26 +125,15 @@ const EditDonor = ({props, data}) => {
 							type="string"
 							fullWidth
 							label="Enter your choice of location"
-							placeholder={data.location}
+							placeholder={data.dropPoints}
 							variant="standard"
 							size="small"
 							color="success"
-							onChange={(e)=>setValues({...values, location:e.target.value})}
+							onChange={(e)=>setValues({...values, droppoint:e.target.value})}
 						/>
 				</Grid>
 
-                <Grid item>
-						<TextField
-							type="string"
-							fullWidth
-							label="Enter your choice of duration"
-							placeholder={data.duration}
-							variant="standard"
-							size="small"
-							color="success"
-							onChange={(e)=>setValues({...values, duration:e.target.value})}
-						/>
-				</Grid>
+                
 
                 <Grid item>
 					<Button type="submit" fullWidth variant="outlined" color="success">
