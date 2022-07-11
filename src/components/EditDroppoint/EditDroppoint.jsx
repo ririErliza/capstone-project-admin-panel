@@ -46,7 +46,7 @@ const EditDroppoint = ({props, data}) => {
       }
   return (
 
-    <Paper elevation={2} sx={{ padding: 2 }}>
+    <Paper elevation={2} sx={{ padding: 2 }} style={{ height:"320px" }}>
 		
 		<Typography variant="h5">
 			Edit Data
