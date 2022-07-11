@@ -1,17 +1,17 @@
 // import React, { useEffect, useState } from 'react'
-import "./DonorDetails.scss"
+import "./DroppointDetails.scss"
 import { Grid, Paper,Typography } from '@mui/material';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'
 import Navbar from '../../components/Navbar/Navbar';
 import Sidebar from '../../components/Sidebar/Sidebar';
-import EditDonor from "../../components/EditDonor/EditDonor";
+import EditDroppoint from "../../components/EditDroppoint/EditDroppoint";
 import { Box } from "@mui/system";
 
 
 
-const DonorDetails = () => {
+const DroppointDetails = () => {
 
 const params= useParams();
 
@@ -28,7 +28,7 @@ const [data, setData]=useState([])
       
 
   useEffect(()=> {
-    authAxios.get(`${apiUrl}/donors/`+ params.id)
+    authAxios.get(`${apiUrl}/droppoints/`+ params.id)
     .then(res=> {
       console.log("Data is", res.data)
       setData(res.data)
@@ -45,13 +45,13 @@ const [data, setData]=useState([])
       <div className='listContainer'>
         <Navbar/>
        
-        <Box id = "box-donord">
+        <Box id = "box-droppointd">
         <Grid container spacing={2} >
       
           <Grid item xs={6} md={6}>
             <Paper elevation={2} sx={{ padding: 2 }} id="paper-data">
               
-              <Typography variant="h5" id="data-text"> Donor Data</Typography>
+              <Typography variant="h5" id="data-text"> Drop Point Data</Typography>
 
                   <div id="data-details">
                     <div className="text-div">
@@ -59,24 +59,16 @@ const [data, setData]=useState([])
                       <div className="details-div">{data.name}</div>
                     </div>
                     <div className="text-div">
-                      <div className="title-div">Surname</div>
-                      <div className="details-div">{data.surname}</div>
-                    </div>
-                    <div className="text-div">
-                      <div className="title-div">Email</div>
-                      <div className="details-div">{data.email}</div>
-                    </div>
-                    <div className="text-div">
                       <div className="title-div">Phone Number</div>
                       <div className="details-div">{data.phone}</div>
                     </div>
                     <div className="text-div">
-                      <div className="title-div">Amount(shoes)</div>
-                      <div className="details-div">{data.numberOfShoes}</div>
+                      <div className="title-div">City</div>
+                      <div className="details-div">{data.city}</div>
                     </div>
                     <div className="text-div">
-                      <div className="title-div">Location</div>
-                      <div className="details-div">{data.dropPoints}</div>
+                      <div className="title-div">Zip Code</div>
+                      <div className="details-div">{data.zipCode}</div>
                     </div>
                   
                     <div className="text-div">
@@ -91,7 +83,7 @@ const [data, setData]=useState([])
 
         <Grid item xs={6} md={6} >
 				
-            <EditDonor data={data} props={params.id}/>
+            <EditDroppoint data={data} props={params.id}/>
         </Grid>
             
    
@@ -114,4 +106,4 @@ const [data, setData]=useState([])
   )
 }
 
-export default DonorDetails
+export default DroppointDetails

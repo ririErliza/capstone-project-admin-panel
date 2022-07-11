@@ -42,7 +42,8 @@ const EditDonor = ({props, data}) => {
         })
         .then((res)=>{
             console.log(res.message);
-            alert("Data successfully UPDATED")
+            alert("Data successfully UPDATED");
+			window.location.reload();
            
         })
         .catch(err=>console.error(err))

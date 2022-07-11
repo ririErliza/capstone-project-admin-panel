@@ -72,7 +72,7 @@ const DroppointTable = () => {
       renderCell: (params) => {
         return (
           <div className="cellAction">
-            <Link to="/donors/edit" style={{ textDecoration: "none" }}>
+            <Link to={"/droppoints/" + params.row._id} style={{ textDecoration: "none" }}>
               <Button className="editButton">Edit</Button>
             </Link>
             <Button

@@ -1,18 +1,16 @@
 import {Button, Grid, Paper, TextField, Typography } from '@mui/material'
 import axios from 'axios';
 import React, { useState } from 'react';
-import "./EditVolunteer.scss";
+import "./EditDroppoint.scss";
 
 
-const EditVolunteer = ({props, data}) => {
+const EditDroppoint = ({props, data}) => {
     const [values, setValues] = useState({
         name:data.name,
-        surname:data.surname,
-        email:data.email,
         phone: data.phone,
-        choiceOfJob: data.choiceOfJob,
-        location: data.location,
-        duration: data.duration,
+        city: data.city,
+        zipCode: data.zipCode,
+
         
       });
     
@@ -32,14 +30,11 @@ const EditVolunteer = ({props, data}) => {
       const handleSubmit = (e) =>{
     
         e.preventDefault();
-        authAxios.put(`${apiUrl}/volunteers/`+ props,{
+        authAxios.put(`${apiUrl}/droppoints/`+ props,{
             name:values.name,
-            surname:values.surname,
-            email:values.email,
             phone: values.phone,
-            choiceOfJob: values.job,
-            location: values.location,
-            duration: values.duration,
+            city: values.city,
+        	zipCode: values.zipCode,
         })
         .then((res)=>{
             console.log(res.message);
@@ -63,7 +58,7 @@ const EditVolunteer = ({props, data}) => {
 						<TextField
 							type="string"
 							fullWidth
-							label="Enter your first name"
+							label="Name"
 							placeholder={data.name}
 							variant="standard"
 							size="small"
@@ -71,36 +66,12 @@ const EditVolunteer = ({props, data}) => {
 							onChange={(e)=>setValues({...values, name:e.target.value})}
 						/>
 				</Grid>
-				<Grid item>
-						<TextField
-							type="string"
-							fullWidth
-							label="Enter your last name"
-							placeholder={data.surname}
-							variant="standard"
-							size="small"
-							color="success"
-							onChange={(e)=>setValues({...values, surname:e.target.value})}
-						/>
-				</Grid>
-				<Grid item>
-						<TextField
-							type="email"
-							fullWidth
-							label="Enter your email"
-							placeholder={data.email}
-							variant="standard"
-							size="small"
-							color="success"
-							onChange={(e)=>setValues({...values, email:e.target.value})}
-						/>
-				</Grid>
-
+				
                 <Grid item>
 						<TextField
 							type="string"
 							fullWidth
-							label="Enter your phone"
+							label="Phone number"
 							placeholder={data.phone}
 							variant="standard"
 							size="small"
@@ -113,12 +84,12 @@ const EditVolunteer = ({props, data}) => {
 						<TextField
 							type="string"
 							fullWidth
-							label="Enter your choice of job"
-							placeholder={data.choiceOfJob}
+							label="City"
+							placeholder={data.city}
 							variant="standard"
 							size="small"
 							color="success"
-							onChange={(e)=>setValues({...values, job:e.target.value})}
+							onChange={(e)=>setValues({...values, city:e.target.value})}
 						/>
 				</Grid>
 
@@ -126,27 +97,16 @@ const EditVolunteer = ({props, data}) => {
 						<TextField
 							type="string"
 							fullWidth
-							label="Enter your choice of location"
-							placeholder={data.location}
+							label="Drop Point"
+							placeholder={data.zipCode}
 							variant="standard"
 							size="small"
 							color="success"
-							onChange={(e)=>setValues({...values, location:e.target.value})}
+							onChange={(e)=>setValues({...values, zipCode:e.target.value})}
 						/>
 				</Grid>
 
-                <Grid item>
-						<TextField
-							type="string"
-							fullWidth
-							label="Enter your choice of duration"
-							placeholder={data.duration}
-							variant="standard"
-							size="small"
-							color="success"
-							onChange={(e)=>setValues({...values, duration:e.target.value})}
-						/>
-				</Grid>
+                
 
                 <Grid item>
 					<Button type="submit" fullWidth variant="outlined" color="success">
@@ -168,4 +128,4 @@ const EditVolunteer = ({props, data}) => {
   )
 }
 
-export default EditVolunteer
+export default EditDroppoint
