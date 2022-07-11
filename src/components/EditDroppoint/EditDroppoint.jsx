@@ -97,7 +97,7 @@ const EditDroppoint = ({props, data}) => {
 						<TextField
 							type="string"
 							fullWidth
-							label="Drop Point"
+							label="Zip Code"
 							placeholder={data.zipCode}
 							variant="standard"
 							size="small"

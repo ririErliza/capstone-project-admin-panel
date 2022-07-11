@@ -154,7 +154,7 @@ const AddDroppoint = () => {
           }}
           unmountOnExit
         >
-          <LinearProgress className='linear-prog'/>
+          <LinearProgress color="inherit" className='add-dp-prog'/>
         </Fade>
       )}
 				</Paper>

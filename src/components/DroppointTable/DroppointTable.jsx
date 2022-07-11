@@ -89,13 +89,13 @@ const DroppointTable = () => {
 
   
   return (
-    <Box sx={{ height: 480, width: '90%' }} className="Box-Table">
+    <Box sx={{ height: 500, width: '90%' }} className="Box-Table">
     <DataGrid
       getRowId={(row) => row._id}
       rows={data}
       columns={columns.concat(actionColumn)}
-      pageSize={5}
-      rowsPerPageOptions={[5]}
+      pageSize={7}
+      rowsPerPageOptions={[7]}
       checkboxSelection
       disableSelectionOnClick
       loading={!data.length}
