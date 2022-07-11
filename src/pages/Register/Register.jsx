@@ -18,8 +18,7 @@ import axios from 'axios';
 import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
-
-	const [loading, setLoading] = useState(false);
+const [loading, setLoading] = useState(false);
   const [values, setValues] = useState({
 	name:"",
 	surname:"",
