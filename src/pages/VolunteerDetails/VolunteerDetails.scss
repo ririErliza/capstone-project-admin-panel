@@ -20,10 +20,29 @@
 
         }
 
-        .textField{
-          margin-bottom: 8px;
-          
+      #data-details{
+        display: flex;
+        flex-direction: column;
+
+        .text-div{
+          display:flex;
+          flex-direction: column;
+          margin-bottom: 10px;
+
+          .title-div{
+            color:#888;
+            font-size: 14px;
+          }
+
+          .details-div{
+            color: rgb(44, 44, 44);
+            font-size: 15px;
+            background-color: rgba(136, 136, 136, 0.343);
+            padding-bottom: 5px;
+            padding-top: 5px;
+          }
         }
+      }
 
       }
 

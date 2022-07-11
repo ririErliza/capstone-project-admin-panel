@@ -1,6 +1,6 @@
 // import React, { useEffect, useState } from 'react'
 import "./VolunteerDetails.scss"
-import { Grid, Paper, TextField, Typography } from '@mui/material';
+import { Grid, Paper,Typography } from '@mui/material';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'
@@ -53,81 +53,41 @@ const [data, setData]=useState([])
               
               <Typography variant="h5" id="data-text"> Volunteer Data</Typography>
 
-    
-                        
-                    <TextField
-            
-                      fullWidth
-                      label="Name"
-                      value={data.name}
-                      className="textField"
-                      variant="filled"
-                      
-                    />
-                  
-               
-                    <TextField
-                     
-                      fullWidth
-                      label="Surname"
-                      value={data.surname}
-                      className="textField"
-                      variant="filled"
-                      
-                    />
-               
-                
-                    <TextField
-                 
-                      fullWidth
-                      label="Email"
-                      value={data.email}
-                      className="textField"
-                      variant="filled"
-                      
-                    />
-                
-                
-                    <TextField
-                    
-                      fullWidth
-                      label="Phone"
-                      value={data.phone}
-                      className="textField"
-                      variant="filled"
-                      
-                    />
-                 
-              
-                    <TextField
-                     
-                      fullWidth
-                      label="Choice of Job"
-                      value={data.choiceOfJob}
-                      className="textField"
-                      variant="filled"
-                      
-                    />
-                  
-                    <TextField
-                   
-                      fullWidth
-                      label="Location"
-                      value={data.location}
-                      className="textField"
-                      variant="filled"
-                      
-                    />
-                  
-          
+                  <div id="data-details">
+                    <div className="text-div">
+                      <div className="title-div">Name</div>
+                      <div className="details-div">{data.name}</div>
+                    </div>
+                    <div className="text-div">
+                      <div className="title-div">Surname</div>
+                      <div className="details-div">{data.surname}</div>
+                    </div>
+                    <div className="text-div">
+                      <div className="title-div">Email</div>
+                      <div className="details-div">{data.email}</div>
+                    </div>
+                    <div className="text-div">
+                      <div className="title-div">Phone Number</div>
+                      <div className="details-div">{data.phone}</div>
+                    </div>
+                    <div className="text-div">
+                      <div className="title-div">Choice of Job</div>
+                      <div className="details-div">{data.choiceOfJob}</div>
+                    </div>
+                    <div className="text-div">
+                      <div className="title-div">Location</div>
+                      <div className="details-div">{data.location}</div>
+                    </div>
+                    <div className="text-div">
+                      <div className="title-div">Duration</div>
+                      <div className="details-div">{data.duration}</div>
+                    </div>
+                    <div className="text-div">
+                      <div className="title-div">Date created</div>
+                      <div className="details-div">{(data.createdAt)}</div>
+                    </div>
+                  </div>
 
-                    <TextField
-                    fullWidth
-                  label="Duration"
-                  value={data.duration}
-                  variant="filled"
-                  />
-               
               
           </Paper>
         </Grid>
