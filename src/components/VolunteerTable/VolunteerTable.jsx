@@ -115,6 +115,8 @@ const VolunteerTable = () => {
       pageSize={7}
       rowsPerPageOptions={[7]}
       loading={!data.length}
+      checkboxSelection
+      disableSelectionOnClick
     
     />
   </Box>

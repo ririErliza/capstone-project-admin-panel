@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link,useNavigate } from 'react-router-dom';
+import { Link,useLocation,useNavigate } from 'react-router-dom';
 import "./Sidebar.scss";
 import Logo from '../../images/logo.png'
 import DashboardIcon from '@mui/icons-material/Dashboard';
@@ -11,7 +11,7 @@ import { Button } from '@mui/material';
 
 
 const Sidebar = () => {
-
+  const location = useLocation()
   const Navigate = useNavigate()
   const handleLogout =()=>{
     localStorage.removeItem("token");
@@ -33,16 +33,36 @@ const Sidebar = () => {
               <div className="center">
                 <ul>
                   <Link to="/" style={{ textDecoration: "none" }}>
-                    <li><DashboardIcon className='icon'/> <span>Dashboard</span> </li>
+                    <li className={location.pathname === '/' ? 'nav-link active' : 'nav-link'}>
+                      <DashboardIcon className='icon'/> 
+                      <span >
+                      Dashboard
+                      </span> 
+                    </li>
                   </Link>
                   <Link to="/donors" style={{ textDecoration: "none" }}>
-                    <li> <CardGiftcardIcon className='icon'/> <span>Donor List</span> </li>
+                    <li className={location.pathname === '/donors' ? 'nav-link active' : 'nav-link'}> 
+                      <CardGiftcardIcon className='icon'/> 
+                      <span >
+                      Donor List
+                      </span> 
+                    </li>
                   </Link>
                   <Link to="/volunteers" style={{ textDecoration: "none" }}>
-                    <li><PersonIcon className='icon'/> <span>Volunteer List</span></li>
+                    <li className={location.pathname === '/volunteers' ? 'nav-link active' : 'nav-link'}>
+                      <PersonIcon className='icon'/> 
+                      <span >
+                      Volunteer List
+                      </span>
+                    </li>
                   </Link>
                   <Link to="/dropPoints" style={{ textDecoration: "none" }}>
-                    <li><PushPinIcon className='icon'/> <span>Drop Points</span> </li>
+                    <li className={location.pathname === '/dropPoints' ? 'nav-link active' : 'nav-link'}>
+                      <PushPinIcon className='icon'/> 
+                      <span >
+                      Drop Points
+                      </span> 
+                      </li>
                   </Link>
                 </ul>
               </div>

@@ -23,13 +23,22 @@
     }
   
     .center {
-      padding-left: 10px;
       margin-top:40px;
   
       ul {
         list-style: none;
         margin: 0;
         padding: 0;
+
+        .nav-link{
+          font-size: 15px;
+        }
+
+        .active{
+          background-color: rgba(136, 136, 136, 0.258);
+          box-shadow: 1px 1px 3px 1px rgba(136, 136, 136, 0.613);
+          border-radius: 3px;
+        }
   
         .title {
           font-size: 10px;
@@ -54,6 +63,8 @@
             font-size: 18px;
             color: #087776;
           }
+
+          
   
           span{
               font-size: 15px;
@@ -80,8 +91,9 @@
             color:#ffff;
             width: 120px;
             padding:8px;
-            border-radius: 50px;
+            border-radius: 5px;
             background-color: #087776;
+            box-shadow: 2px 2px 5px 1px rgba(136, 136, 136, 0.613);
             &:hover {
                 background-color: #129391;
               }

@@ -62,7 +62,7 @@ const EditDroppoint = ({props, data}) => {
 							placeholder={data.name}
 							variant="standard"
 							size="small"
-							color="success"
+							
 							onChange={(e)=>setValues({...values, name:e.target.value})}
 						/>
 				</Grid>
@@ -75,7 +75,7 @@ const EditDroppoint = ({props, data}) => {
 							placeholder={data.phone}
 							variant="standard"
 							size="small"
-							color="success"
+							
 							onChange={(e)=>setValues({...values, phone:e.target.value})}
 						/>
 				</Grid>
@@ -88,7 +88,7 @@ const EditDroppoint = ({props, data}) => {
 							placeholder={data.city}
 							variant="standard"
 							size="small"
-							color="success"
+							
 							onChange={(e)=>setValues({...values, city:e.target.value})}
 						/>
 				</Grid>
@@ -101,7 +101,7 @@ const EditDroppoint = ({props, data}) => {
 							placeholder={data.zipCode}
 							variant="standard"
 							size="small"
-							color="success"
+							
 							onChange={(e)=>setValues({...values, zipCode:e.target.value})}
 						/>
 				</Grid>
@@ -109,7 +109,7 @@ const EditDroppoint = ({props, data}) => {
                 
 
                 <Grid item>
-					<Button type="submit" fullWidth variant="outlined" color="success">
+					<Button type="submit" fullWidth variant="outlined">
 						UPDATE
 					</Button>
                 </Grid>
