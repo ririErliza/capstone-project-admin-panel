@@ -78,6 +78,11 @@ const [data, setData]=useState([])
                       <div className="title-div">Location</div>
                       <div className="details-div">{data.dropPoints}</div>
                     </div>
+
+                    <div className="text-div">
+                      <div className="title-div">Status</div>
+                      <div className="details-div">{data.status}</div>
+                    </div>
                   
                     <div className="text-div">
                       <div className="title-div">Date created</div>

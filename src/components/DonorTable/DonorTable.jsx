@@ -11,9 +11,10 @@ const columns = [
   {field: 'name', headerName: 'Name',width: 100,editable: true,},
   {field: 'surname', headerName: 'Surname', width: 100, editable: true,},
   {field: 'email', headerName: 'Email',width: 190,editable: true,},
-  {field: 'phone', headerName: 'Phone',width: 160,editable: true,},
+  {field: 'phone', headerName: 'Phone',width: 100,editable: true,},
   {field: 'numberOfShoes', headerName: 'Amount (shoes)',type: 'number',width: 100,editable: true,},
-  {field: 'dropPoints', headerName: 'Droppoint',width: 150,editable: true,},
+  {field: 'dropPoints', headerName: 'Droppoint',width: 100,editable: true,},
+  {field: 'status', headerName: 'Status',width: 100,editable: true,},
 ];
 
 const DonorTable = () => {

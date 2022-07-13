@@ -1,4 +1,4 @@
-import {Button, Grid, Paper, TextField, Typography } from '@mui/material'
+import {Button, FormControlLabel, Grid,Paper,Radio,RadioGroup,TextField, Typography } from '@mui/material'
 import axios from 'axios';
 import React, { useState } from 'react';
 import "./EditDonor.scss";
@@ -12,6 +12,7 @@ const EditDonor = ({props, data}) => {
         phone: data.phone,
         amount: data.numberOfShoes,
         droppoint: data.dropPoints,
+		status: data.status,
 
         
       });
@@ -39,6 +40,7 @@ const EditDonor = ({props, data}) => {
             phone: values.phone,
             numberOfShoes: values.amount,
             dropPoints: values.droppoint,
+			status: values.status,
         })
         .then((res)=>{
             console.log(res.message);
@@ -48,6 +50,8 @@ const EditDonor = ({props, data}) => {
         })
         .catch(err=>console.error(err))
       }
+
+
   return (
 
     <Paper elevation={2} sx={{ padding: 2 }}>
@@ -134,6 +138,15 @@ const EditDonor = ({props, data}) => {
 						/>
 				</Grid>
 
+
+				<Grid item >
+				<RadioGroup id='radiogroup' onChange={(e)=>setValues({...values, status:e.target.value})}>
+					
+					<FormControlLabel value="Incoming" control={<Radio/>} label = "Incoming"/>
+					<FormControlLabel value="On progress" control={<Radio/>} label = "On progress"/>
+					<FormControlLabel value="Completed" control={<Radio/>} label = "Completed"/>
+				</RadioGroup>
+				</Grid>
                 
 
                 <Grid item>
