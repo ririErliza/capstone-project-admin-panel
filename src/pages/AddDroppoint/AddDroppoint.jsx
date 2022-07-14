@@ -90,7 +90,7 @@ const AddDroppoint = () => {
 						<TextField
               
 							type="string"
-              color="success"
+              
 							fullWidth
 							label="Drop Point Name"
 							placeholder="type here..."
@@ -102,7 +102,7 @@ const AddDroppoint = () => {
 					<Grid item>
 						<TextField
 							type="string"
-              color="success"
+              
 							fullWidth
 							label="Phone number"
 							placeholder="type here..."
@@ -114,7 +114,7 @@ const AddDroppoint = () => {
 					<Grid item>
 						<TextField
 							type="string"
-              color="success"
+              
 							fullWidth
 							label="City"
 							placeholder="type here..."
@@ -127,7 +127,7 @@ const AddDroppoint = () => {
 					<Grid item>
 					<TextField
 						type="string"
-            color="success"
+            
 						fullWidth
 						label="Zip Code"
 						placeholder="type here..."
