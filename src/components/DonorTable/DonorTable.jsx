@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
 import { Link } from "react-router-dom";
-import "./DonorTable.scss";
+import "./DonorTable.css";
 import axios from 'axios';
 import Box from '@mui/material/Box';
 import { DataGrid} from '@mui/x-data-grid';
@@ -13,8 +13,15 @@ const columns = [
   {field: 'email', headerName: 'Email',width: 190,editable: true,},
   {field: 'phone', headerName: 'Phone',width: 100,editable: true,},
   {field: 'numberOfShoes', headerName: 'Amount (shoes)',type: 'number',width: 100,editable: true,},
-  {field: 'dropPoints', headerName: 'Droppoint',width: 100,editable: true,},
-  {field: 'status', headerName: 'Status',width: 100,editable: true,},
+  {field: 'dropPoints', headerName: 'Drop point',width: 100,editable: true,},
+  {field: 'status',width: 100,editable: true,
+                                renderCell: (params) => {
+                                  return (
+                                    <div id={params.row.status === "Completed"? "completed-status" : "on-progress-status" && params.row.status === "On progress"? "on-progress-status" : "incoming-status"}>
+                                      {params.row.status}
+                                    </div>
+                                  );
+                                },},
 ];
 
 const DonorTable = () => {
