@@ -27,7 +27,7 @@ const Login = () => {
     showPass: false,
   });
 
-  console.log(values)
+  console.log(values) 
 
   const handleSubmit = (e) =>{
 	setLoading(true)
