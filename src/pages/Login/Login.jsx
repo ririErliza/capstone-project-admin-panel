@@ -33,7 +33,7 @@ const Login = () => {
 	setLoading(true)
 	e.preventDefault();
 	axios
-	.post("https://reviver-backend.herokuapp.com/users/login",{
+	.post("https://backend-reviver.herokuapp.com/users/login",{
 		email:values.email,
 		password:values.password,
 	})

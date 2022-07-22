@@ -18,7 +18,7 @@ const params= useParams();
 console.log("paramsId:", params.id, "params:", params)
 
 const [data, setData]=useState([])
-  const apiUrl = 'https://reviver-backend.herokuapp.com'
+  const apiUrl = 'https://backend-reviver.herokuapp.com'
   const token = localStorage.getItem('token')
 
   const authAxios = axios.create({

@@ -30,7 +30,7 @@ const AddDroppoint = () => {
   console.log(values)
   const navigate = useNavigate();
 
-  const apiUrl = 'https://reviver-backend.herokuapp.com'
+  const apiUrl = 'https://backend-reviver.herokuapp.com'
   const token = localStorage.getItem('token')
 
   const authAxios = axios.create({

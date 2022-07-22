@@ -35,7 +35,7 @@ const Register = () => {
 	setLoading(true)
 	e.preventDefault();
 	axios
-	.post("https://reviver-backend.herokuapp.com/users/register",{
+	.post("https://backend-reviver.herokuapp.com/users/register",{
 		name:values.name,
 		surname:values.surname,
 		email:values.email,
