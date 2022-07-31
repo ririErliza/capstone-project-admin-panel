@@ -4,7 +4,7 @@ import { Grid, Paper,Typography } from '@mui/material';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'
-import Navbar from '../../components/Navbar/Navbar';
+//import Navbar from '../../components/Navbar/Navbar';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import EditDroppoint from "../../components/EditDroppoint/EditDroppoint";
 import { Box } from "@mui/system";
@@ -43,7 +43,7 @@ const [data, setData]=useState([])
       <Sidebar/>
     
       <div className='listContainer'>
-        <Navbar/>
+        {/* <Navbar/> */}
        
         <Box id = "box-droppointd">
         <Grid container spacing={2} >

@@ -1,0 +1,8 @@
+#icon{
+    transform: translateY(5px);
+    color: blue;
+}
+
+#icon:hover{
+   cursor: pointer;
+}

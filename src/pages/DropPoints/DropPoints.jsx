@@ -1,6 +1,6 @@
 import React from 'react';
 import DroppointTable from '../../components/DroppointTable/DroppointTable';
-import Navbar from '../../components/Navbar/Navbar';
+//import Navbar from '../../components/Navbar/Navbar';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import "./DropPoints.scss"
 import AddIcon from '@mui/icons-material/Add';
@@ -13,7 +13,7 @@ const DropPoints = () => {
     <Sidebar/>
   
   <div className='listContainer'>
-    <Navbar/>
+    {/* <Navbar/> */}
     <div className='title'>
     <Typography variant="h5">Drop Points</Typography>
     <Link to="/dropPoints/add" style={{ textDecoration: "none" }}>

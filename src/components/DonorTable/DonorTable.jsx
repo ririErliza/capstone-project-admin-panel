@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { Link } from "react-router-dom";
 import "./DonorTable.css";
 import axios from 'axios';
@@ -51,7 +51,7 @@ const DonorTable = () => {
   
   const handleDelete = (_id) => {
     setData(data.filter((item) => item._id !== _id));
-  };
+  }
 
   const actionColumn = [
     {

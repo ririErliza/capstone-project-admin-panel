@@ -1,20 +1,10 @@
 import React, { useState } from 'react';
 import "./AddDroppoint.scss";
-import {
-	Container,
-	Button,
-	Grid,
-	Paper,
-	TextField,
-	Typography,
-	LinearProgress,
-	Fade,
-  Box,
-} from "@mui/material";
+import {Container,Button,Grid,Paper,TextField,Typography,LinearProgress,Fade,Box} from "@mui/material";
 import axios from 'axios';
 import {useNavigate } from "react-router-dom";
 import Sidebar from '../../components/Sidebar/Sidebar';
-import Navbar from '../../components/Navbar/Navbar';
+
 
 const AddDroppoint = () => {
 
@@ -67,7 +57,7 @@ const AddDroppoint = () => {
       <Sidebar/>
     
       <div className='listContainer'>
-        <Navbar/>
+     
        
         <Box id="droppoint-bg">
  

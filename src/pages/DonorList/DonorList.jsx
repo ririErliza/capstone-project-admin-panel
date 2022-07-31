@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from '../../components/Navbar/Navbar';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import DonorTable from '../../components/DonorTable/DonorTable';
 import "./DonorList.scss"
@@ -11,7 +10,7 @@ const DonorList = () => {
       <Sidebar/>
     
       <div className='listContainer'>
-        <Navbar/>
+       
           <div className='title'>
           <Typography variant="h5">Donor List</Typography>
     

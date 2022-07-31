@@ -1,7 +1,7 @@
 import React from 'react';
 import "./Home.scss"
 import Sidebar from '../../components/Sidebar/Sidebar';
-import Navbar from '../../components/Navbar/Navbar';
+//import Navbar from '../../components/Navbar/Navbar';
 import { Box, Grid, Typography } from '@mui/material';
 import Widget from '../../components/Widget/Widget';
 import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
@@ -21,7 +21,7 @@ const Home = () => {
     <div className="home">
       <Sidebar />
       <div className="homeContainer">
-        <Navbar />
+        {/* <Navbar /> */}
 
         <Box id = "box-home">
         <Grid container spacing={2}>

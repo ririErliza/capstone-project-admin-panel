@@ -12,6 +12,10 @@ import AddDroppoint from './pages/AddDroppoint/AddDroppoint';
 import VolunteerDetails from './pages/VolunteerDetails/VolunteerDetails';
 import DonorDetails from './pages/DonorDetails/DonorDetails';
 import DroppointDetails from './pages/DroppointDetails/DroppointDetails';
+import AddProduct from './pages/AddProduct/AddProduct';
+import Products from './pages/Products/Products';
+import Orders from './pages/Orders/Orders';
+import OrderDetails from './pages/OrderDetails/OrderDetails';
 //import Sidebar from './components/Sidebar/Sidebar';
 //import Navbar from './components/Navbar/Navbar';
 
@@ -34,6 +38,10 @@ function App() {
           {user && <Route path="/droppoints" element={<DropPoints />}   />}
           {user && <Route path="/droppoints/:id" element={<DroppointDetails/>}   />}
           {user && <Route path="/droppoints/add" element={<AddDroppoint />}   />}
+          {user &&<Route path="/products" element={<Products />}    />}
+          {user &&<Route path="/products/add" element={<AddProduct/>}    />}
+          {user &&<Route path="/orders" element={<Orders />}    />}
+          {user && <Route path="/orders/:id" element={<OrderDetails/>}   />}
           <Route path="*" element={<NotFound />}  />
         </Routes>
 

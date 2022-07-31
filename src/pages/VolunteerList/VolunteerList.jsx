@@ -1,7 +1,7 @@
 
 import { Typography } from '@mui/material';
 import React from 'react';
-import Navbar from '../../components/Navbar/Navbar';
+//import Navbar from '../../components/Navbar/Navbar';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import VolunteerTable from '../../components/VolunteerTable/VolunteerTable';
 import "./VolunteerList.scss"
@@ -12,7 +12,7 @@ const VolunteerList = () => {
     <Sidebar/>
   
   <div className='listContainer'>
-    <Navbar/>
+    {/* <Navbar/> */}
 
 <div className='title'>
 

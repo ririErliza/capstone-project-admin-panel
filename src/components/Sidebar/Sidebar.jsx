@@ -7,6 +7,8 @@ import PersonIcon from '@mui/icons-material/Person';
 import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
 import PushPinIcon from '@mui/icons-material/PushPin';
 import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
+import StoreIcon from '@mui/icons-material/Store';
+import AllInboxIcon from '@mui/icons-material/AllInbox';
 import { Button } from '@mui/material';
 
 
@@ -61,6 +63,22 @@ const Sidebar = () => {
                       <PushPinIcon className='icon'/> 
                       <span >
                       Drop Points
+                      </span> 
+                      </li>
+                  </Link>
+                  <Link to="/products" style={{ textDecoration: "none" }}>
+                    <li className={location.pathname === '/products' ? 'nav-link active' : 'nav-link'}>
+                      <StoreIcon className='icon'/> 
+                      <span >
+                      Products
+                      </span> 
+                      </li>
+                  </Link>
+                  <Link to="/orders" style={{ textDecoration: "none" }}>
+                    <li className={location.pathname === '/orders' ? 'nav-link active' : 'nav-link'}>
+                      <AllInboxIcon className='icon'/> 
+                      <span >
+                      Orders
                       </span> 
                       </li>
                   </Link>

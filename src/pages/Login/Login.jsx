@@ -18,6 +18,7 @@ import axios from 'axios';
 import { Link } from "react-router-dom";
 
 
+
 const Login = () => {
 	const [loading, setLoading] = useState(false);
 
@@ -38,6 +39,8 @@ const Login = () => {
 		password:values.password,
 	})
 	.then((res)=>{
+
+		localStorage.setItem("adminName", res.data.name)
 		localStorage.setItem("token", res.data.accessToken);
 		setLoading(true);
 		window.location="/";

@@ -1,17 +1,16 @@
 // import React, { useEffect, useState } from 'react'
-import "./VolunteerDetails.scss"
+import "./OrderDetails.scss"
 import { Grid, Paper,Typography } from '@mui/material';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom'
-
+import { useParams } from 'react-router-dom';
 import Sidebar from '../../components/Sidebar/Sidebar';
-import EditVolunteer from "../../components/EditVolunteer/EditVolunteer";
 import { Box } from "@mui/system";
-//import DataVolunteer from "../../components/DataVolunteer/DataVolunteer";
+import EditOrder from "../../components/EditOrder/EditOrder";
 
 
-const VolunteerDetails = () => {
+
+const OrderDetails = () => {
 
 const params= useParams();
 
@@ -28,7 +27,7 @@ const [data, setData]=useState([])
       
 
   useEffect(()=> {
-    authAxios.get(`${apiUrl}/volunteers/`+ params.id)
+    authAxios.get(`${apiUrl}/users/`+ params.id)
     .then(res=> {
       console.log("Data is", res.data)
       setData(res.data)
@@ -45,13 +44,13 @@ const [data, setData]=useState([])
       <div className='listContainer'>
       
        
-        <Box id = "box-volunteerd">
+        <Box id = "box-donord">
         <Grid container spacing={2} >
       
           <Grid item xs={6} md={6}>
             <Paper elevation={2} sx={{ padding: 2 }} id="paper-data">
               
-              <Typography variant="h5" id="data-text"> Volunteer Data</Typography>
+              <Typography variant="h5" id="data-text"> Order Data</Typography>
 
                   <div id="data-details">
                     <div className="text-div">
@@ -66,22 +65,18 @@ const [data, setData]=useState([])
                       <div className="title-div">Email</div>
                       <div className="details-div">{data.email}</div>
                     </div>
+
                     <div className="text-div">
-                      <div className="title-div">Phone Number</div>
-                      <div className="details-div">{data.phone}</div>
+                      <div className="title-div">Payment Status</div>
+                      <div className="details-div">{data.payment_status}</div>
                     </div>
+           
+
                     <div className="text-div">
-                      <div className="title-div">Choice of Job</div>
-                      <div className="details-div">{data.choiceOfJob}</div>
+                      <div className="title-div">Delivery Status</div>
+                      <div className="details-div">{data.delivery_status}</div>
                     </div>
-                    <div className="text-div">
-                      <div className="title-div">Location</div>
-                      <div className="details-div">{data.location}</div>
-                    </div>
-                    <div className="text-div">
-                      <div className="title-div">Duration</div>
-                      <div className="details-div">{data.duration}</div>
-                    </div>
+                  
                     <div className="text-div">
                       <div className="title-div">Date created</div>
                       <div className="details-div">{(data.createdAt)}</div>
@@ -94,7 +89,7 @@ const [data, setData]=useState([])
 
         <Grid item xs={6} md={6} >
 				
-            <EditVolunteer data={data} props={params.id}/>
+            <EditOrder data={data} props={params.id}/>
         </Grid>
             
    
@@ -117,4 +112,4 @@ const [data, setData]=useState([])
   )
 }
 
-export default VolunteerDetails
+export default OrderDetails
