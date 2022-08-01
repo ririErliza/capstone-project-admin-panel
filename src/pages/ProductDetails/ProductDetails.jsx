@@ -1,16 +1,17 @@
 // import React, { useEffect, useState } from 'react'
-import "./DonorDetails.scss"
+import "./ProductDetails.scss"
 import { Grid, Paper,Typography } from '@mui/material';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom';
 import Sidebar from '../../components/Sidebar/Sidebar';
-import EditDonor from "../../components/EditDonor/EditDonor";
 import { Box } from "@mui/system";
+import EditProduct from "../../components/EditProduct/EditProduct";
 
 
 
-const DonorDetails = () => {
+
+const ProductDetails = () => {
 
 const params= useParams();
 
@@ -27,7 +28,7 @@ const [data, setData]=useState([])
       
 
   useEffect(()=> {
-    authAxios.get(`${apiUrl}/donors/`+ params.id)
+    authAxios.get(`${apiUrl}/products/`+ params.id)
     .then(res=> {
       console.log("Data is", res.data)
       setData(res.data)
@@ -42,47 +43,41 @@ const [data, setData]=useState([])
       <Sidebar/>
     
       <div className='listContainer'>
-    
-
-       
+      
        
         <Box id = "box-donord">
         <Grid container spacing={2} >
       
           <Grid item xs={6} md={6}>
-            <Paper elevation={2} sx={{ padding: 2 }} id="paper-donor">
+            <Paper elevation={2} sx={{ padding: 2 }} id="paper-data">
               
-              <Typography variant="h5" id="data-text"> Donor Data</Typography>
+              <Typography variant="h5" id="data-text"> Order Data</Typography>
 
                   <div id="data-details">
                     <div className="text-div">
-                      <div className="title-div">Name</div>
-                      <div className="details-div">{data.name}</div>
+                      <div className="title-div">Title</div>
+                      <div className="details-div">{data.title}</div>
                     </div>
                     <div className="text-div">
-                      <div className="title-div">Surname</div>
-                      <div className="details-div">{data.surname}</div>
+                      <div className="title-div">Description</div>
+                      <div className="details-div">{data.desc}</div>
                     </div>
                     <div className="text-div">
-                      <div className="title-div">Email</div>
-                      <div className="details-div">{data.email}</div>
-                    </div>
-                    <div className="text-div">
-                      <div className="title-div">Phone Number</div>
-                      <div className="details-div">{data.phone}</div>
-                    </div>
-                    <div className="text-div">
-                      <div className="title-div">Amount(shoes)</div>
-                      <div className="details-div">{data.numberOfShoes}</div>
-                    </div>
-                    <div className="text-div">
-                      <div className="title-div">Location</div>
-                      <div className="details-div">{data.dropPoints}</div>
+                      <div className="title-div">Color</div>
+                      <div className="details-div">{data.color}</div>
                     </div>
 
                     <div className="text-div">
-                      <div className="title-div">Status</div>
-                      <div className="details-div">{data.status}</div>
+                      <div className="title-div">Price</div>
+                      <div className="details-div">$ {data.price}</div>
+                    </div>
+           
+
+                    <div className="text-div">
+                      <div className="title-div">In Stock</div>
+                      <div className="details-div">
+                        {data.inStock === true ? "true" : "false"}
+                      </div>
                     </div>
                   
                     <div className="text-div">
@@ -97,7 +92,7 @@ const [data, setData]=useState([])
 
         <Grid item xs={6} md={6} >
 				
-            <EditDonor data={data} props={params.id}/>
+            <EditProduct data={data} props={params.id}/>
         </Grid>
             
    
@@ -120,4 +115,4 @@ const [data, setData]=useState([])
   )
 }
 
-export default DonorDetails
+export default ProductDetails

@@ -1,19 +1,17 @@
 import {Button, FormControlLabel, Grid, Paper, Radio, RadioGroup, TextField, Typography } from '@mui/material'
 import axios from 'axios';
 import React, { useState } from 'react';
-import "./EditOrder.scss";
+import "./EditProduct.scss";
 
 
-const EditOrder = ({props, data}) => {
+const EditProduct = ({props, data}) => {
     const [values, setValues] = useState({
-        name:data.name,
-		email: data.email,
-		surname:data.surname,
-        delivery_status: data.delivery_status,
-        payment_status: data.payment_status,
-        
-
-        
+        title:data.title,
+		desc: data.desc,
+		color:data.color,
+        price: data.price,
+        inStock: data.inStock,
+          
       });
     
       console.log(values)
@@ -32,13 +30,14 @@ const EditOrder = ({props, data}) => {
       const handleSubmit = (e) =>{
     
         e.preventDefault();
-        authAxios.put(`${apiUrl}/users/`+ props,{
+        authAxios.put(`${apiUrl}/products/`+ props,{
+
            
-			name:values.name,
-            surname:values.surname,
-            email:values.email,
-			payment_status: values.payment_status,
-			delivery_status: values.delivery_status,
+			title:values.title,
+            desc:values.desc,
+            color:values.color,
+			price: values.price,
+			inStock: values.inStock,
         })
         .then((res)=>{
             console.log(res.message);
@@ -62,57 +61,63 @@ const EditOrder = ({props, data}) => {
 						<TextField
 							type="string"
 							fullWidth
-							label="Name"
-							placeholder={data.name}
+							label="Title"
+							placeholder={data.title}
 							variant="standard"
 							size="small"
 						
-							onChange={(e)=>setValues({...values, name:e.target.value})}
+							onChange={(e)=>setValues({...values, title:e.target.value})}
 						/>
 				</Grid>
 				<Grid item>
 						<TextField
 							type="string"
 							fullWidth
-							label="Surname"
-							placeholder={data.surname}
+							label="Description"
+							placeholder={data.desc}
 							variant="standard"
 							size="small"
 					
-							onChange={(e)=>setValues({...values, surname:e.target.value})}
+							onChange={(e)=>setValues({...values, desc:e.target.value})}
 						/>
 				</Grid>
 				<Grid item>
 						<TextField
-							type="email"
+							type="string"
 							fullWidth
-							label="Email address"
-							placeholder={data.email}
+							label="Color"
+							placeholder={data.color}
 							variant="standard"
 							size="small"
 						
-							onChange={(e)=>setValues({...values, email:e.target.value})}
+							onChange={(e)=>setValues({...values, color:e.target.value})}
+						/>
+				</Grid>
+
+				<Grid item>
+						<TextField
+							type="number"
+							fullWidth
+							label="Price"
+							placeholder={data.price}
+							variant="standard"
+							size="small"
+						
+							onChange={(e)=>setValues({...values, price:e.target.value})}
 						/>
 				</Grid>
 
                 
 
 
-				<Grid item >
-				<RadioGroup id='radiogroup' onChange={(e)=>setValues({...values, payment_status:e.target.value})}>
-					
-					<FormControlLabel value="pending" control={<Radio/>} label = "pending"/>
-					<FormControlLabel value="refund" control={<Radio/>} label = "refund"/>
-					<FormControlLabel value="completed" control={<Radio/>} label = "completed"/>
-				</RadioGroup>
-				</Grid>
+			
 
 				<Grid item >
-				<RadioGroup id='radiogroup' onChange={(e)=>setValues({...values, delivery_status:e.target.value})}>
+				<RadioGroup id='radiogroup' onChange={(e)=>setValues({...values, inStock:e.target.value})}>
 					
-					<FormControlLabel value="not delivered" control={<Radio/>} label = "not delivered"/>
-					<FormControlLabel value="delivered" control={<Radio/>} label = "delivered"/>
-					<FormControlLabel value="completed" control={<Radio/>} label = "completed"/>
+					<FormControlLabel value="true" control={<Radio/>} label = "true"/>
+					<FormControlLabel value="false" control={<Radio/>} label = "false"/>
+		
 				</RadioGroup>
 				</Grid>
                 
@@ -137,4 +142,4 @@ const EditOrder = ({props, data}) => {
   )
 }
 
-export default EditOrder
+export default EditProduct

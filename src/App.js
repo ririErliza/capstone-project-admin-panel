@@ -16,6 +16,7 @@ import AddProduct from './pages/AddProduct/AddProduct';
 import Products from './pages/Products/Products';
 import Orders from './pages/Orders/Orders';
 import OrderDetails from './pages/OrderDetails/OrderDetails';
+import ProductDetails from './pages/ProductDetails/ProductDetails';
 //import Sidebar from './components/Sidebar/Sidebar';
 //import Navbar from './components/Navbar/Navbar';
 
@@ -39,6 +40,7 @@ function App() {
           {user && <Route path="/droppoints/:id" element={<DroppointDetails/>}   />}
           {user && <Route path="/droppoints/add" element={<AddDroppoint />}   />}
           {user &&<Route path="/products" element={<Products />}    />}
+          {user &&<Route path="/products/:id" element={<ProductDetails />}    />}
           {user &&<Route path="/products/add" element={<AddProduct/>}    />}
           {user &&<Route path="/orders" element={<Orders />}    />}
           {user && <Route path="/orders/:id" element={<OrderDetails/>}   />}

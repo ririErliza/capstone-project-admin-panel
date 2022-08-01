@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import Sidebar from '../../components/Sidebar/Sidebar'
 import "./Products.css"
 import AddIcon from '@mui/icons-material/Add';
+import ProductsTable from '../../components/ProductsTable/ProductsTable'
 
 const Products = () => {
   return (
@@ -23,7 +24,7 @@ const Products = () => {
     </div>
       
   
-
+<ProductsTable/>
     
 
             

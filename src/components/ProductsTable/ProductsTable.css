@@ -1,0 +1,19 @@
+.Box-Table{
+  margin-left: 5%;
+  margin-top: 3%;
+}
+
+.true-status{
+  background-color: rgba(0, 255, 221, 0.663);
+  padding: 2px 3px 2px 3px;
+}
+
+.false-status{
+  background-color: rgba(255, 166, 0, 0.628);
+  padding: 2px 3px 2px 3px;
+}
+
+.productListImg{
+  width: 40px;
+  height: auto;
+}

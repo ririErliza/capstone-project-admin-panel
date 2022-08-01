@@ -1,0 +1,20 @@
+.Box-Table{
+  margin-left: 5%;
+  margin-top: 3%;
+}
+
+.completed-status{
+  background-color: rgba(0, 255, 221, 0.663);
+  padding: 2px 3px 2px 3px;
+}
+
+.on-progress-status{
+  background-color: rgba(255, 166, 0, 0.628);
+  padding: 2px 3px 2px 3px;
+}
+
+.incoming-status{
+ 
+  background-color: rgba(42, 144, 42, 0.306);
+  padding: 2px 3px 2px 3px;
+}
