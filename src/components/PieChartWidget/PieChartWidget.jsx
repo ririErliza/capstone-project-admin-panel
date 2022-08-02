@@ -36,7 +36,7 @@ const PieChartWidget = () => {
     <Paper elevation={3} id="paper">
       <div className="title">Shoes by Drop Points</div>
 
-      <PieChart width={400} height={275}>
+      <PieChart width={400} height={262}>
           <Pie
             data={data}
             cx="50%"
