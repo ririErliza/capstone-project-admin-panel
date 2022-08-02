@@ -43,7 +43,10 @@ const [data, setData]=useState([])
       <Sidebar/>
     
       <div className='listContainer'>
-        {/* <Navbar/> */}
+      <div className='title'>
+    <Typography variant="h5">Drop Point Details</Typography>
+  
+    </div>
        
         <Box id = "box-droppointd">
         <Grid container spacing={2} >

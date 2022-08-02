@@ -43,6 +43,10 @@ const [data, setData]=useState([])
       <Sidebar/>
     
       <div className='listContainer'>
+      <div className='title'>
+    <Typography variant="h5">Volunteer Details</Typography>
+  
+    </div>
       
        
         <Box id = "box-volunteerd">

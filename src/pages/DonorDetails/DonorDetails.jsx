@@ -43,6 +43,10 @@ const [data, setData]=useState([])
     
       <div className='listContainer'>
     
+      <div className='title'>
+    <Typography variant="h5">Donor Details</Typography>
+  
+    </div>
 
        
        

@@ -43,15 +43,30 @@ const [data, setData]=useState([])
       <Sidebar/>
     
       <div className='listContainer'>
+
+      <div className='title'>
+    <Typography variant="h5">Product Details</Typography>
+  
+    </div>
       
        
         <Box id = "box-donord">
         <Grid container spacing={2} >
-      
-          <Grid item xs={6} md={6}>
+        <Grid item xs={12} md={2}>
+          <Paper elevation={2}>
+          <img src={data.img} alt="" width={160}/>
+          </Paper>
+        </Grid>
+
+        
+          <Grid item xs={6} md={5}>
             <Paper elevation={2} sx={{ padding: 2 }} id="paper-data">
+
+           
               
-              <Typography variant="h5" id="data-text"> Order Data</Typography>
+              <Typography variant="h5" id="data-text"> Product Data</Typography>
+
+            
 
                   <div id="data-details">
                     <div className="text-div">
@@ -90,7 +105,7 @@ const [data, setData]=useState([])
           </Paper>
         </Grid>
 
-        <Grid item xs={6} md={6} >
+        <Grid item xs={6} md={5} >
 				
             <EditProduct data={data} props={params.id}/>
         </Grid>

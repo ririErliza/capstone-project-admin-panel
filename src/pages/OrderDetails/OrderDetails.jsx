@@ -42,6 +42,11 @@ const [data, setData]=useState([])
       <Sidebar/>
     
       <div className='listContainer'>
+
+      <div className='title'>
+    <Typography variant="h5">Order Details</Typography>
+  
+    </div>
       
        
         <Box id = "box-donord">
